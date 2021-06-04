@@ -1,9 +1,11 @@
-import './App.css';
-
+import "./App.css";
+import { HomePage } from "./Components/HomePage/MainFolder/HomePage";
+// import Search from "./Components/HomePage/Search"
 function App() {
   return (
     <div className="App">
-     <h1>AirBnb</h1>
+      <HomePage />
+      {/* <Search /> */}
     </div>
   );
 }
