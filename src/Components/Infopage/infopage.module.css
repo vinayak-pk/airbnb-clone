@@ -1,0 +1,10 @@
+.boundary {
+    width:80%;
+    margin:auto;
+}
+
+.topdec{
+    text-decoration: underline;
+    color:rgb(141, 141, 141);
+    cursor: pointer;
+}
