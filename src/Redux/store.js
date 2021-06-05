@@ -1,4 +1,4 @@
-import {createStore,applyMiddleware} from "redux"
+import {createStore,applyMiddleware,combineReducers} from "redux"
 import Thunk from "redux-thunk"
 import {reducer as inforeducer} from "./infopage/reducer"
 
