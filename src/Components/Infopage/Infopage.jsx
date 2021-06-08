@@ -1,9 +1,12 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import {Grid} from "@material-ui/core"
+
 import { getData } from "../../Redux/infopage/action";
 import styles from  "./infopage.module.css";
-
+import { Description } from "../Description/Description";
 import { Photogrid } from "../Collage/Collage";
+import { Summary } from "../Payment/Summary";
 export function Infopage() {
   let dispatch = useDispatch();
   const {data} = useSelector((state) => state.info);
@@ -26,7 +29,14 @@ export function Infopage() {
         </div>
       </div>
       <Photogrid/>
- 
+      <div style={{display:"flex",gap:"50px"}}>
+        <Grid  xs={7}>
+            <Description/>
+          </Grid>
+          <Grid xs={5}>
+              <Summary data={data}/>
+          </Grid>
+      </div>
     </div>
   );
 }

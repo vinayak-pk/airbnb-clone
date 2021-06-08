@@ -35,7 +35,7 @@ export function Photogrid(){
                   <Grid item xs={6}>
                     <img style={{width:"100%",borderTopLeftRadius:"10px",borderBottomLeftRadius:"10px"}} src={first} alt="something" />
                   </Grid>
-                  <Grid className={classes.gridPad} container xs={6} spacing={0.2}>
+                  <Grid className={classes.gridPad} container xs={6} spacing={1}>
                     {data.img?.map((image,i)=>(
                       i!==0&&i<5&&<Grid key={i} xs={6}>
                           <img style={i===2?{width:"97%",borderTopRightRadius:"10px"}:i===4?{width:"97%",borderBottomRightRadius:"10px"}:{width:"97%"}} src={image} alt="something" />
