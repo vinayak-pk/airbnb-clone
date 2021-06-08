@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Nav.css";
+import "./NavChild.css";
 import PropTypes from "prop-types";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 // import AppBar from "@material-ui/core/AppBar";
@@ -7,12 +8,14 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import SearchRoundedIcon from "@material-ui/icons/SearchRounded";
-import { Button } from "@material-ui/core";
+// import { Button } from "@material-ui/core";
 import TextField from "@material-ui/core/TextField";
-import StaticDateRangePicker from "@material-ui/lab/StaticDateRangePicker";
-import AdapterDateFns from "@material-ui/lab/AdapterDateFns";
-import LocalizationProvider from "@material-ui/lab/LocalizationProvider";
+import { DetectClick } from "./DetectClick";
+// import StaticDateRangePicker from "@material-ui/lab/StaticDateRangePicker";
+// import AdapterDateFns from "@material-ui/lab/AdapterDateFns";
+// import LocalizationProvider from "@material-ui/lab/LocalizationProvider";
 import Box from "@material-ui/core/Box";
+import Search from "../Search";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -78,6 +81,7 @@ const useStyles = makeStyles((theme) => ({
   },
   demo2: {
     backgroundColor: "transparent",
+    borderradius: "50%",
   },
 }));
 const useStyles2 = makeStyles((theme) => ({
@@ -106,8 +110,13 @@ const useStyles3 = makeStyles((theme) => ({
 }));
 
 const NavChild = () => {
-  const [val, setVal] = React.useState([null, null]);
-
+  const dropdownRef = React.useRef(null);
+  const [isActive, setIsActive] = DetectClick(dropdownRef, false);
+  const onClick = () => setIsActive(!isActive);
+  const [quant, setQuant] = React.useState(0);
+  const [quant2, setQuant2] = React.useState(0);
+  const [quant3, setQuant3] = React.useState(0);
+  const [showquant, setShowQuant] = useState(false);
   const classes2 = useStyles2();
   const classes = useStyles();
   const classes3 = useStyles3();
@@ -131,40 +140,22 @@ const NavChild = () => {
             <StyledTab label="Online Experiences" />
           </StyledTabs>
           <TabPanel value={value} index={0}>
-            <form className={classes2.root} noValidate autoComplete="off">
+            {/* <form className={classes2.root} noValidate autoComplete="off"> */}
+            <div className={classes2.root}>
               <input
                 id="standard-basic"
                 label="Locations"
                 placeholder="LOCATIONS"
               />
 
-              {showSearch && (
-                <LocalizationProvider dateAdapter={AdapterDateFns}>
-                  <StaticDateRangePicker
-                    displayStaticWrapperAs="desktop"
-                    value={val}
-                    onChange={(newValue) => {
-                      setVal(newValue);
-                    }}
-                    renderInput={(startProps, endProps) => (
-                      <React.Fragment>
-                        <TextField {...startProps} />
-                        <Box sx={{ mx: 2 }}> to </Box>
-                        <TextField {...endProps} />
-                      </React.Fragment>
-                    )}
-                  />
-                </LocalizationProvider>
-              )}
-              <Button
+              <button
                 onClick={() => setShowSearch(!showSearch)}
-                className="banner__searchButton"
                 variant="outlined"
               >
                 {showSearch ? "Hide" : "Check in"}
-              </Button>
-              <Button>Check Out</Button>
-              <Button>Guests</Button>
+              </button>
+              <button>Check Out</button>
+              <button onClick={onClick}>{showquant ? "Guests" : quant}</button>
 
               <SearchRoundedIcon
                 style={{
@@ -175,7 +166,65 @@ const NavChild = () => {
                   backgroundColor: "rgb(255, 50, 84)",
                 }}
               />
-            </form>
+            </div>
+            {/* </form> */}
+            <p></p>
+            {showSearch && <Search />}
+            <nav
+              ref={dropdownRef}
+              className={`drops ${isActive ? "active" : "inactive"}`}
+            >
+              <ul>
+                <li>
+                  <a href="#">Adults</a>
+                  Ages 13 or above
+                  <div>
+                    <button
+                      onClick={() => setQuant((prev) => prev - 1)}
+                      disabled={quant === 0}
+                    >
+                      -
+                    </button>
+                    <p>{quant}</p>
+                    <button onClick={() => setQuant((prev) => prev + 1)}>
+                      +
+                    </button>
+                  </div>
+                </li>
+                <li>
+                  <a href="#">Children</a>
+                  Ages 2-12
+                  <div>
+                    <button
+                      onClick={() => setQuant2((prev) => prev - 1)}
+                      disabled={quant2 === 0}
+                    >
+                      -
+                    </button>
+                    <p>{quant2}</p>
+                    <button onClick={() => setQuant2((prev) => prev + 1)}>
+                      +
+                    </button>
+                  </div>
+                </li>
+                <li>
+                  <a href="#">Infants</a>
+                  Under 2
+                  <div>
+                    <button
+                      onClick={() => setQuant3((prev) => prev - 1)}
+                      disabled={quant3 === 0}
+                    >
+                      -
+                    </button>
+                    <p>{quant3}</p>
+                    <button onClick={() => setQuant3((prev) => prev + 1)}>
+                      +
+                    </button>
+                  </div>
+                </li>
+              </ul>
+            </nav>
           </TabPanel>
           <TabPanel value={value} index={1}>
             <form className={classes3.root} noValidate autoComplete="off">
@@ -184,7 +233,7 @@ const NavChild = () => {
             </form>
           </TabPanel>
 
-          {/* <Typography className={classes.padding} /> */}
+          <Typography className={classes.padding} />
         </div>
       </div>
     </div>
@@ -192,6 +241,3 @@ const NavChild = () => {
 };
 
 export default NavChild;
-{
-  /* <Search/> */
-}

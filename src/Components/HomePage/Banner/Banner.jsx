@@ -33,15 +33,6 @@ function Banner() {
           </Button>
         </div>
       </div>
-      <h1>jdhiuhdqjcghdb,qwdhLhhgdhyhghdjdubududhudhudhduhduhduhdudu</h1>
-      <h1>jdhiuhdqjcghdb,qwdhLhhgdhyhghdjdubududhudhudhduhduhduhdudu</h1>
-      <h1>jdhiuhdqjcghdb,qwdhLhhgdhyhghdjdubududhudhudhduhduhduhdudu</h1>
-      <h1>jdhiuhdqjcghdb,qwdhLhhgdhyhghdjdubududhudhudhduhduhduhdudu</h1>
-      <h1>jdhiuhdqjcghdb,qwdhLhhgdhyhghdjdubududhudhudhduhduhduhdudu</h1>
-      <h1>jdhiuhdqjcghdb,qwdhLhhgdhyhghdjdubududhudhudhduhduhduhdudu</h1>
-      <h1>jdhiuhdqjcghdb,qwdhLhhgdhyhghdjdubududhudhudhduhduhduhdudu</h1>
-      <h1>jdhiuhdqjcghdb,qwdhLhhgdhyhghdjdubududhudhudhduhduhduhdudu</h1>
-      <h1>jdhiuhdqjcghdb,qwdhLhhgdhyhghdjdubududhudhudhduhduhduhdudu</h1>
     </div>
   );
 }

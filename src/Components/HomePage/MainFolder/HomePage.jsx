@@ -1,22 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import { Navbar } from "../Navbar/Navbar";
 import Banner from "../Banner/Banner";
-import NavChild from "../Navbar/NavChild";
-import { Link, animateScroll as scroll } from "react-scroll";
+import Explore from "../Explore_nearby/Explore"
+import { Footer } from "../Footer/Footer";
+// import { Link, animateScroll as scroll } from "react-scroll";
 
 export const HomePage = () => {
-  const [active, setActive] = useState(false);
-  const handlSetActive = () => {
-    setActive(true);
-  };
+  // const [active, setActive] = useState(false);
+  // const handlSetActive = () => {
+  //   setActive(true);
+  // };
   return (
     <div>
       <Navbar />
-      {/* <Link>
-        Your name
-        <NavChild />
-      </Link> */}
       <Banner />
+      <Explore/>
+      <Footer />
     </div>
   );
 };
