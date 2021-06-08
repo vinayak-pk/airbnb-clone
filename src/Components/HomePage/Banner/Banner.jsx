@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Banner.module.css";
 import { Button } from "@material-ui/core";
-// import Search from './Search';
+
 import { useHistory } from "react-router-dom";
 
 function Banner() {

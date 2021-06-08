@@ -3,6 +3,8 @@ import { Navbar } from "../Navbar/Navbar";
 import Banner from "../Banner/Banner";
 import Explore from "../Explore_nearby/Explore"
 import { Footer } from "../Footer/Footer";
+import Discover from "../Discover/Discover"
+import Live from "../Live_anywhere/Live"
 // import { Link, animateScroll as scroll } from "react-scroll";
 
 export const HomePage = () => {
@@ -15,6 +17,8 @@ export const HomePage = () => {
       <Navbar />
       <Banner />
       <Explore/>
+      <Live/>
+      <Discover/>
       <Footer />
     </div>
   );
