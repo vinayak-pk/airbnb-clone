@@ -47,9 +47,8 @@
 }
 
 .formInputMainDiv {
-  height: 20vh;
-  padding: 30%;
-  width: 72vw;
+  padding-top:50%;
+  width: 100%;
   display: flex;
   justify-content: space-around;
   background-color: "transparent";

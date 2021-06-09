@@ -31,10 +31,12 @@
 }
 .banner {
   background: url("https://a0.muscache.com/im/pictures/4602a952-afa0-46a6-b08a-24e67e958309.jpg?im_w=720");
-  height: 50vh;
-  width: 50%;
+  height: 60vh;
+  width:90%;
   border-radius: 10px;
   margin: 0 auto;
+  background-repeat: no-repeat;
+  background-size:cover;
 }
 
 .banner__info {

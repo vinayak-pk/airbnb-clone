@@ -32,10 +32,12 @@
 }
 .banner2 {
   background: url("https://a0.muscache.com/im/pictures/5b4dc94a-0b4c-4c27-b50f-9c5a5b93c775.jpg?im_w=720");
-  height: 50vh;
-  width: 50%;
+  height: 60vh;
+  width: 90%;
   border-radius: 10px;
   margin: 0 auto;
+  background-repeat: no-repeat;
+  background-size:cover;
 }
 
 .banner__info2 {
@@ -69,6 +71,7 @@
   font-weight: medium;
   text-align: left;
   margin-top: 10px;
+
 }
 .banner__info2 p {
     color: #fff;

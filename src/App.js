@@ -1,11 +1,12 @@
 import "./App.css";
 import { HomePage } from "./Components/HomePage/MainFolder/HomePage";
-import Search from "./Components/HomePage/Search"
+// import SearchDate from "./Components/HomePage/DateSearch/SearchDate";
+
 function App() {
   return (
     <div className="App">
       <HomePage />
-      {/* <Search /> */}
+      {/* <SearchDate /> */}
     </div>
   );
 }

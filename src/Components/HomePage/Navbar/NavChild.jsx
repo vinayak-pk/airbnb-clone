@@ -1,22 +1,18 @@
 import React, { useState } from "react";
+import { useDispatch,useSelector ,shallowEqual} from "react-redux";
 import "./Nav.css";
 import "./NavChild.css";
 import PropTypes from "prop-types";
-import { makeStyles, withStyles } from "@material-ui/core/styles";
-// import AppBar from "@material-ui/core/AppBar";
+import { makeStyles, withStyles } from "@material-ui/styles";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import SearchRoundedIcon from "@material-ui/icons/SearchRounded";
-// import { Button } from "@material-ui/core";
 import TextField from "@material-ui/core/TextField";
 import { DetectClick } from "./DetectClick";
-// import StaticDateRangePicker from "@material-ui/lab/StaticDateRangePicker";
-// import AdapterDateFns from "@material-ui/lab/AdapterDateFns";
-// import LocalizationProvider from "@material-ui/lab/LocalizationProvider";
 import Box from "@material-ui/core/Box";
-import Search from "../Search";
-
+import SearchDate from "../DateSearch/SearchDate";
+import { add_input } from "../../../Redux/NavBar/action";
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -49,9 +45,9 @@ const StyledTabs = withStyles({
     justifyContent: "center",
     backgroundColor: "transparent",
     "& > span": {
-      maxWidth: 40,
+      maxWidth: 100,
       width: "100%",
-      backgroundColor: "#635ee7",
+      backgroundColor: "#ffffff",
     },
   },
 })((props) => <Tabs {...props} TabIndicatorProps={{ children: <span /> }} />);
@@ -60,9 +56,9 @@ const StyledTab = withStyles((theme) => ({
   root: {
     textTransform: "none",
     color: "#070707",
-    fontWeight: theme.typography.fontWeightRegular,
-    fontSize: theme.typography.pxToRem(15),
-    marginRight: theme.spacing(5),
+    fontWeight: theme.typography,
+    fontSize: "15px",
+    marginRight: "10px auto",
     "&:focus": {
       opacity: 1,
     },
@@ -80,15 +76,16 @@ const useStyles = makeStyles((theme) => ({
     margin: "10px auto",
   },
   demo2: {
-    backgroundColor: "transparent",
-    borderradius: "50%",
+    width: "100%",
+    backgroundColor: "red",
+    borderRadius: "15px",
   },
 }));
 const useStyles2 = makeStyles((theme) => ({
   root: {
     "& > *": {
-      margin: theme.spacing(0),
-      width: "20%",
+      margin: "10px",
+      width: "18%",
       height: "45px",
       backgroundColor: "white",
       borderRadius: "5%",
@@ -100,8 +97,8 @@ const useStyles2 = makeStyles((theme) => ({
 const useStyles3 = makeStyles((theme) => ({
   root: {
     "& > *": {
-      margin: theme.spacing(0),
-      width: "40%",
+      margin: "10px",
+      width: "100%",
       backgroundColor: "white",
       borderRadius: "5%",
       borderRight: "1px solid black",
@@ -109,20 +106,52 @@ const useStyles3 = makeStyles((theme) => ({
   },
 }));
 
+const initState = {
+  location: "",
+  customerDate: "",
+  guests: 0,
+};
+
 const NavChild = () => {
   const dropdownRef = React.useRef(null);
   const [isActive, setIsActive] = DetectClick(dropdownRef, false);
-  const onClick = () => setIsActive(!isActive);
-  const [quant, setQuant] = React.useState(0);
-  const [quant2, setQuant2] = React.useState(0);
-  const [quant3, setQuant3] = React.useState(0);
-  const [showquant, setShowQuant] = useState(false);
+  const [adult, setAdult] = React.useState(0);
+  const [child, setChild] = React.useState(0);
+  const [infant, setInfant] = React.useState(0);
+  const [showquant, setShowQuant] = useState(0);
+  const [tempVal, setTempVal] = React.useState(initState);
+  // const [locate,setLocate] = react.useState("")
   const classes2 = useStyles2();
   const classes = useStyles();
   const classes3 = useStyles3();
   const [value, setValue] = React.useState(0);
-  const [showSearch, setShowSearch] = useState(false);
 
+  const dispatch = useDispatch();
+
+  const handleAdult = (e) => {
+    setAdult((prev) => prev + e);
+    setShowQuant((prev) => prev + e);
+  };
+  const handleChild = (e) => {
+    setChild((prev) => prev + e);
+    setShowQuant((prev) => prev + e);
+  };
+  const handleInfant = (e) => {
+    setInfant((prev) => prev + e);
+    setShowQuant((prev) => prev + e);
+  };
+  const CustomerData = () => {
+    setTempVal({ ...tempVal, guests: showquant });
+    dispatch(add_input(tempVal));
+  };
+
+  const locations = (e) => {
+    setTempVal({ ...tempVal, location: e.target.value });
+  };
+  // console.log(tempVal);
+  // console.log(showquant);
+  const {guests,location,customerDate}= useSelector((state)=> state.Navbar,shallowEqual)
+  console.log(guests,location,customerDate)
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -140,36 +169,34 @@ const NavChild = () => {
             <StyledTab label="Online Experiences" />
           </StyledTabs>
           <TabPanel value={value} index={0}>
-            {/* <form className={classes2.root} noValidate autoComplete="off"> */}
             <div className={classes2.root}>
               <input
                 id="standard-basic"
                 label="Locations"
                 placeholder="LOCATIONS"
+                onChange={locations}
               />
 
-              <button
-                onClick={() => setShowSearch(!showSearch)}
-                variant="outlined"
-              >
-                {showSearch ? "Hide" : "Check in"}
+              <SearchDate setTempVal={setTempVal} tempVal={tempVal} />
+              <button onClick={() => setIsActive(!isActive)}>
+                {showquant ? showquant : "Guests"}
               </button>
-              <button>Check Out</button>
-              <button onClick={onClick}>{showquant ? "Guests" : quant}</button>
 
               <SearchRoundedIcon
+                onClick={CustomerData}
                 style={{
                   width: "25px",
                   borderRadius: "50%",
                   height: "25px",
                   margin: "10px 0px auto",
                   backgroundColor: "rgb(255, 50, 84)",
+                  cursor: "pointer",
                 }}
               />
             </div>
-            {/* </form> */}
+
             <p></p>
-            {showSearch && <Search />}
+
             <nav
               ref={dropdownRef}
               className={`drops ${isActive ? "active" : "inactive"}`}
@@ -180,15 +207,13 @@ const NavChild = () => {
                   Ages 13 or above
                   <div>
                     <button
-                      onClick={() => setQuant((prev) => prev - 1)}
-                      disabled={quant === 0}
+                      onClick={() => handleAdult(-1)}
+                      disabled={adult === 0}
                     >
                       -
                     </button>
-                    <p>{quant}</p>
-                    <button onClick={() => setQuant((prev) => prev + 1)}>
-                      +
-                    </button>
+                    <p>{adult}</p>
+                    <button onClick={() => handleAdult(1)}>+</button>
                   </div>
                 </li>
                 <li>
@@ -196,15 +221,13 @@ const NavChild = () => {
                   Ages 2-12
                   <div>
                     <button
-                      onClick={() => setQuant2((prev) => prev - 1)}
-                      disabled={quant2 === 0}
+                      onClick={() => handleChild(-1)}
+                      disabled={child === 0}
                     >
                       -
                     </button>
-                    <p>{quant2}</p>
-                    <button onClick={() => setQuant2((prev) => prev + 1)}>
-                      +
-                    </button>
+                    <p>{child}</p>
+                    <button onClick={() => handleChild(1)}>+</button>
                   </div>
                 </li>
                 <li>
@@ -212,15 +235,13 @@ const NavChild = () => {
                   Under 2
                   <div>
                     <button
-                      onClick={() => setQuant3((prev) => prev - 1)}
-                      disabled={quant3 === 0}
+                      onClick={() => handleInfant(-1)}
+                      disabled={infant === 0}
                     >
                       -
                     </button>
-                    <p>{quant3}</p>
-                    <button onClick={() => setQuant3((prev) => prev + 1)}>
-                      +
-                    </button>
+                    <p>{infant}</p>
+                    <button onClick={() => handleInfant(1)}>+</button>
                   </div>
                 </li>
               </ul>
@@ -233,7 +254,7 @@ const NavChild = () => {
             </form>
           </TabPanel>
 
-          <Typography className={classes.padding} />
+          {/* <Typography className={classes.padding} /> */}
         </div>
       </div>
     </div>
