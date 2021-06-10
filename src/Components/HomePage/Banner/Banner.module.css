@@ -1,11 +1,9 @@
 .banner {
   background: url("https://a0.muscache.com/im/pictures/57476340-4280-4012-9b97-5d7df5fa309d.jpg?im_w=2560");
   height: 100vh;
-  position: relative;
 }
 
 .banner__info {
-  /* background-color: white; */
   color: #1f1f1f;
   padding-top: 25vh;
   padding-left: 50px;
@@ -35,7 +33,7 @@
 }
 
 .banner__info > button:hover {
-  background-color: white;
+  /* background-color: white; */
   color: #000000;
 }
 

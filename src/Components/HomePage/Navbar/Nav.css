@@ -1,30 +1,35 @@
 .main_Body {
   width: 100%;
+  
 }
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  /* align-items: center; */
   position: sticky;
   top: 0;
-  background-color: white;
+  background-color: transparent;
   z-index: 100;
   width: 100%;
   height: 13vh;
+}
+.header.active {
+  background: white;
 }
 
 .header__icon {
   object-fit: contain;
   height: 40px;
   margin-left: 20px;
+  margin-top: 20px;
 }
 
 .header__center {
   display: flex;
-  flex: 1;
   justify-content: space-between;
   align-items: center;
-  max-width: 20%;
+  width: 25%;
+  margin-top: 20px;
   padding: 10px;
   height: 50px;
   border: 1px solid lightgray;
@@ -42,17 +47,16 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 8vw;
-  margin-right: 80px;
+  width: 22%;
 }
 
-.formInputMainDiv {
-  padding-top:50%;
+/* .formInputMainDiv {
+  padding-top: 50%;
   width: 100%;
   display: flex;
   justify-content: space-around;
   background-color: "transparent";
-}
+} */
 .searchimg {
   background-color: rgb(255, 50, 84);
   border-radius: 50%;
@@ -71,3 +75,100 @@
   display: none
 } */
 
+.tabNavigation {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 55%;
+  height: 40vh;
+  background: transparent;
+  margin: 30px auto 0;
+  margin-left:200px;
+  word-break: break-all;
+  /* border: 1px solid rgba(0, 0, 0, 0.274); */
+}
+
+.bloc-tabs {
+  display: flex;
+}
+.tabs {
+  padding: 15px;
+  text-align: center;
+  width: 40%;
+  background: rgba(102, 90, 90, 0.075);
+  cursor: pointer;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.274);
+  box-sizing: content-box;
+  position: relative;
+  outline: none;
+}
+.tabs:not(:last-child) {
+  border-right: 1px solid rgba(0, 0, 0, 0.274);
+}
+
+.active-tabs {
+  background: transparent;
+  border-bottom: 1px solid transparent;
+}
+
+.active-tabs::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% + 2px);
+  height: 5px;
+  background: rgb(88, 147, 241);
+}
+
+button {
+  border: none;
+}
+.content-tabs {
+  flex-grow: 1;
+}
+.content {
+  background: transparent;
+  padding: 15px;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+/* .content h2 {
+  padding: 0px 0 5px 0px;
+} */
+/* .content hr {
+  width: 100px;
+  height: 2px;
+  background: #222;
+  margin-bottom: 5px;
+}
+.content p {
+  width: 100%;
+  height: 100%;
+} */
+.active-content {
+  display: block;
+}
+
+.dataDiv {
+  padding: 5px;
+  display: flex;
+  /* border: 1px solid black; */
+  border-radius: 999px;
+  height: 75px;
+  background: white;
+}
+
+.dataDiv input {
+  border: none;
+}
+
+.dataDiv button {
+  background: transparent;
+  color: grey;
+  font-size: 14px;
+  width: 100px;
+}
