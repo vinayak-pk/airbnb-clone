@@ -1,5 +1,5 @@
 import React from "react";
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/styles';
 import {Grid} from "@material-ui/core"
 import { useSelector } from "react-redux";
 
@@ -8,14 +8,15 @@ const useStyles = makeStyles((theme) => ({
       display: 'flex',
       flexWrap: 'wrap',
       justifyContent: 'space-around',
-      backgroundColor: theme.palette.background.paper
+      backgroundColor: 'white', 
+      gap:"10px"
     },
     gridList: {
       width: 500,
       height: 450,
     },
     gridPad:{
-      padding: '0.4%',
+      padding: '0.7%',
       paddingBottom:'0px'
     },
     box:{
@@ -31,14 +32,14 @@ export function Photogrid(){
       }
     const classes =useStyles();       
     return <div className={classes.root}>
-              <Grid className={classes.box} container spacing={1}>
+              <Grid className={classes.box} container spacing={"1"}>
                   <Grid item xs={6}>
-                    <img style={{width:"100%",borderTopLeftRadius:"10px",borderBottomLeftRadius:"10px"}} src={first} alt="something" />
+                    <img style={{width:"99%",borderTopLeftRadius:"10px",borderBottomLeftRadius:"10px"}} src={first} alt="something" />
                   </Grid>
                   <Grid className={classes.gridPad} container xs={6} spacing={1}>
                     {data.img?.map((image,i)=>(
                       i!==0&&i<5&&<Grid key={i} xs={6}>
-                          <img style={i===2?{width:"97%",borderTopRightRadius:"10px"}:i===4?{width:"97%",borderBottomRightRadius:"10px"}:{width:"97%"}} src={image} alt="something" />
+                          <img style={i===2?{width:"98%",borderTopRightRadius:"10px"}:i===4?{width:"98%",borderBottomRightRadius:"10px"}:{width:"98%"}} src={image} alt="something" />
                       </Grid>
                       ))}
                   </Grid>

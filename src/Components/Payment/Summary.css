@@ -1,7 +1,85 @@
 .sumbody{
+    width: 80%;
     margin-top: 40px;
-    padding:10px;
+    margin-right: 0px;
+    padding:6%;
     border-radius:10px;
     border:1px solid lightgray;
+    position:-webkit-sticky;
+    position: sticky;
+    top:80px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
     /* padding-top:"30px" */
+}
+
+.sdate{
+    margin-top:25px
+}
+
+.sbuttons{
+    border-radius: 50%; 
+    padding:4% 5.5%;
+    border:1px solid lightgray;
+    outline: none;
+    margin: 0 10px;
+    background:transparent;
+    /* font-size:20px */
+}
+
+.scountbody{
+    width:34%
+}
+
+.buttonsign{
+    font-size:15px
+}
+
+.persons{
+    width: 89.5%;
+    padding:2% 5%;
+    border:1px solid lightgray;
+    border-bottom-left-radius:10px;
+    border-bottom-right-radius:10px;
+
+}
+
+.submitbutton{
+    border-radius: 10px;
+    margin:10px 0;
+    width:100%;
+    padding:5% 0;
+    color:white;
+    border:0px;
+    outline:none;
+    background: #e51f57;
+}
+
+.submitbutton:hover{
+    background-position: right center;
+}
+
+.pricing{
+    display:flex;
+    justify-content:space-between;
+    margin:10px 0
+}
+
+.sumNav{
+    position:fixed;
+    display:flex;
+    overflow: hidden;
+    background-color: white;
+    padding:0% 10%;
+    top:0;
+    width:100%;
+    gap:2%;
+}
+
+.navtabs{
+    padding:2%;
+    cursor: pointer;
+}
+
+.navtabs:hover{
+     border-bottom: 3px solid black;
 }

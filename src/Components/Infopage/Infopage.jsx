@@ -7,7 +7,9 @@ import styles from  "./infopage.module.css";
 import { Description } from "../Description/Description";
 import { Photogrid } from "../Collage/Collage";
 import { Summary } from "../Payment/Summary";
+import {Navsum} from "../Navsum/Navsum"
 export function Infopage() {
+  const [infonav,setInfonav] = React.useState(false);
   let dispatch = useDispatch();
   const {data} = useSelector((state) => state.info);
   console.log("here");
@@ -16,7 +18,22 @@ export function Infopage() {
   }, [dispatch]);
   let reviews = data?.review
   console.log(data)
-  return (
+  
+  React.useEffect(() => {
+    const scrollCallBack = window.addEventListener("scroll", () => {
+      if (window.pageYOffset > 450) {
+                setInfonav(true)
+      }else{
+        setInfonav(false)
+      }
+    });
+    return () => {
+      window.removeEventListener("scroll", scrollCallBack);
+    };
+  }, []);
+
+  return (<>
+    {infonav&&<Navsum/>}
     <div className={styles.boundary}>
       <div>
         <h2 className={styles.header}>{data.name}</h2>
@@ -29,7 +46,7 @@ export function Infopage() {
         </div>
       </div>
       <Photogrid/>
-      <div style={{display:"flex",gap:"50px"}}>
+      <div style={{display:"flex",gap:"10%"}}>
         <Grid  xs={7}>
             <Description/>
           </Grid>
@@ -38,5 +55,6 @@ export function Infopage() {
           </Grid>
       </div>
     </div>
+    </>
   );
 }

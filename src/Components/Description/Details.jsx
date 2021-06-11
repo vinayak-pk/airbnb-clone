@@ -1,5 +1,7 @@
 import React from "react";
-import {Typography,Box,makeStyles} from "@material-ui/core"
+import { makeStyles} from "@material-ui/styles"
+
+import {Typography,Box} from "@material-ui/core"
 import {MeetingRoomOutlined,CalendarTodayOutlined,BookmarkBorderOutlined,HomeOutlined} from "@material-ui/icons"
 
 
