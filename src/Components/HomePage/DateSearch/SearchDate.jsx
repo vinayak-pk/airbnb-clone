@@ -12,6 +12,7 @@ const useStyles = makeStyles(() => ({
     border: "none",
     borderRightStyle: "solid",
     borderRightColor: "grey",
+
   },
 }));
 export default function Calender({ setTempVal, tempVal }) {
@@ -36,11 +37,12 @@ export default function Calender({ setTempVal, tempVal }) {
         renderInput={(startProps, endProps) => (
           <React.Fragment>
             {/* <InputLabel htmlFor="component-simple">Check-in</InputLabel> */}
-            <TextField
+            <TextField {...startProps} />
+            <Box></Box>
+            <TextField  
               variant="outlined"
-              disableUnderline={false}
+              disableUnderline={true}
               margin="normal"
-              required
               name="Check-in"
               autoComplete="Check-in"
               placeholder="Check-in"
@@ -48,21 +50,8 @@ export default function Calender({ setTempVal, tempVal }) {
               InputProps={{
                 classes: { notchedOutline: classes.noBorder },
               }}
-              {...startProps}
-              helperText=""
+              {...endProps}
             />
-            <Box></Box>
-            <TextField variant="outlined"
-              disableUnderline={false}
-              margin="normal"
-              required
-              name="Check-in"
-              autoComplete="Check-in"
-              placeholder="Check-in"
-              className={classes.textField}
-              InputProps={{
-                classes: { notchedOutline: classes.noBorder },
-              }} {...endProps} helperText="" />
           </React.Fragment>
         )}
       />

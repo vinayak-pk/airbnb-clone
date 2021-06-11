@@ -5,6 +5,7 @@ import LanguageIcon from "@material-ui/icons/Language";
 import UserClick from "./UserClick";
 import Logo from "./Logo.svg";
 import NavData from "./NavData";
+import Banner from "../Banner/Banner";
 // import ScrollToTop from "react-scroll-to-top";
 
 export const Navbar = () => {
@@ -40,7 +41,8 @@ export const Navbar = () => {
 
   return (
     <>
-      <div className={navbar ? "header active" : "header"}>
+     
+      <div className={navbar ? "heading active" : "heading"}>
         <div>
           <img className="header__icon" src={Logo} alt="logo" />
         </div>
@@ -59,6 +61,7 @@ export const Navbar = () => {
           <UserClick />
         </div>
       </div>
+      <Banner />
     </>
   );
 };

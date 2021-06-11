@@ -1,6 +1,6 @@
 import React from "react";
 import { Navbar } from "../Navbar/Navbar";
-import Banner from "../Banner/Banner";
+// import Banner from "../Banner/Banner";
 import Explore from "../Explore_nearby/Explore"
 import { Footer } from "../Footer/Footer";
 import Discover from "../Discover/Discover"
@@ -12,7 +12,7 @@ export const HomePage = () => {
   return (
     <div>
       <Navbar />
-      <Banner />
+      {/* <Banner /> */}
       <Explore/>
       <Live/>
       <Discover/>

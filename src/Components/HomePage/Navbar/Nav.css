@@ -1,19 +1,20 @@
-.main_Body {
+/* .main_Body {
   width: 100%;
   
-}
-.header {
+} */
+.heading {
   display: flex;
   justify-content: space-between;
   /* align-items: center; */
   position: sticky;
   top: 0;
-  background-color: transparent;
-  z-index: 100;
+  /* background-color: transparent; */
+  background: url("https://a0.muscache.com/im/pictures/57476340-4280-4012-9b97-5d7df5fa309d.jpg?im_w=2560");
   width: 100%;
   height: 13vh;
 }
-.header.active {
+.heading.active {
+  /* background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAA1BMVEX///+nxBvIAAAASElEQVR4nO3BgQAAAADDoPlTX+AIVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwDcaiAAFXD1ujAAAAAElFTkSuQmCC"); */
   background: white;
 }
 
@@ -74,6 +75,9 @@
 .inactive {
   display: none
 } */
+/* .inactive {
+  display: none
+}  */
 
 .tabNavigation {
   display: flex;
@@ -83,7 +87,7 @@
   height: 40vh;
   background: transparent;
   margin: 30px auto 0;
-  margin-left:200px;
+  margin-left: 200px;
   word-break: break-all;
   /* border: 1px solid rgba(0, 0, 0, 0.274); */
 }
@@ -91,13 +95,17 @@
 .bloc-tabs {
   display: flex;
 }
+
+.bloc-tabs button {
+  background-color: transparent;
+}
 .tabs {
-  padding: 15px;
+  padding: 9px;
   text-align: center;
   width: 40%;
   background: rgba(102, 90, 90, 0.075);
   cursor: pointer;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.274);
+  /* border-bottom: 1px solid rgba(0, 0, 0, 0.274); */
   box-sizing: content-box;
   position: relative;
   outline: none;
@@ -115,11 +123,11 @@
   content: "";
   display: block;
   position: absolute;
-  top: -5px;
+  bottom: -7px;
   left: 50%;
   transform: translateX(-50%);
-  width: calc(100% + 2px);
-  height: 5px;
+  width: calc(20% + 1px);
+  height: 3px;
   background: rgb(88, 147, 241);
 }
 
