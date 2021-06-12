@@ -3,10 +3,10 @@ import { useDispatch, useSelector, shallowEqual } from "react-redux";
 import SearchRoundedIcon from "@material-ui/icons/SearchRounded";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
-// import Button from "@material-ui/core/Button";
+import Tooltip from "@material-ui/core/Tooltip";
+import { Link } from "react-router-dom";
 import "./Nav.css";
 import "./NavChild.css";
-import { DetectClick } from "./DetectClick";
 import SearchDate from "../DateSearch/SearchDate";
 import { add_input } from "../../../Redux/NavBar/action";
 
@@ -25,8 +25,7 @@ const initState = {
 };
 const NavData = () => {
   const [toggleState, setToggleState] = useState(1);
-  const dropdownRef = React.useRef(null);
-  const [isActive, setIsActive] = DetectClick(dropdownRef, false);
+  const [isActing, setisActing] = React.useState(false);
   const [adult, setAdult] = React.useState(0);
   const [child, setChild] = React.useState(0);
   const [infant, setInfant] = React.useState(0);
@@ -49,6 +48,7 @@ const NavData = () => {
   const CustomerData = () => {
     setTempVal({ ...tempVal, guests: showquant });
     dispatch(add_input(tempVal));
+    setTempVal(initState);
   };
 
   const locations = (e) => {
@@ -93,113 +93,136 @@ const NavData = () => {
           className={toggleState === 1 ? "content active-content" : "content"}
         >
           <div className="dataDiv">
-            <TextField
-              id="standard-basic"
-              disableUnderline={false}
-              margin="normal"
-              required
-              name="Locations"
-              autoFocus
-              placeholder="Locations"
-              onChange={locations}
-              className={classes.textField}
-              InputProps={{
-                classes: { notchedOutline: classes.noBorder },
-              }}
-            />
+            <Tooltip title="Where are you going?" arrow>
+              <TextField
+                id="standard-basic"
+                disableUnderline={true}
+                margin="normal"
+                label="Locations"
+                onChange={locations}
+                InputProps={{
+                  classes: { notchedOutline: classes.noBorder },
+                }}
+              />
+            </Tooltip>
 
             <SearchDate setTempVal={setTempVal} tempVal={tempVal} />
+
+            {/* <Tooltip title="Add Guests" arrow> */}
             <button
               size="medium"
               variant="default"
-              onClick={() => setIsActive(!isActive)}
+              onClick={() => setisActing(!isActing)}
             >
               {showquant ? showquant : "Guests"}
             </button>
-            <SearchRoundedIcon
-              onClick={CustomerData}
-              style={{
-                width: "50px",
-                borderRadius: "50%",
-                height: "50px",
-                marginLeft: "50px",
-                marginTop: "1px",
-                backgroundColor: "rgb(255, 50, 84)",
-                cursor: "pointer",
-                color:"white",
-              }}
-            />
+            {/* </Tooltip> */}
+            <Tooltip title="Click to view facinating places" arrow>
+              <SearchRoundedIcon
+                onClick={CustomerData}
+                style={{
+                  width: "50px",
+                  borderRadius: "50%",
+                  height: "50px",
+                  marginLeft: "55px",
+                  marginTop: "7px",
+                  backgroundColor: "rgb(255, 50, 84)",
+                  cursor: "pointer",
+                  color: "white",
+                  padding: "12px",
+                }}
+              />
+            </Tooltip>
           </div>
-          <nav
-            ref={dropdownRef}
-            className={`drops ${isActive ? "active" : "inactive"}`}
-          >
-            <ul>
-              <li>
-                <a href="#">Adults</a>
-                Ages 13 or above
-                <div>
-                  <button
-                    onClick={() => handleAdult(-1)}
-                    disabled={adult === 0}
-                  >
-                    -
-                  </button>
-                  <p>{adult}</p>
-                  <button onClick={() => handleAdult(1)}>+</button>
-                </div>
-              </li>
-              <li>
-                <a href="#">Children</a>
-                Ages 2-12
-                <div>
-                  <button
-                    onClick={() => handleChild(-1)}
-                    disabled={child === 0}
-                  >
-                    -
-                  </button>
-                  <p>{child}</p>
-                  <button onClick={() => handleChild(1)}>+</button>
-                </div>
-              </li>
-              <li>
-                <a href="#">Infants</a>
-                Under 2
-                <div>
-                  <button
-                    onClick={() => handleInfant(-1)}
-                    disabled={infant === 0}
-                  >
-                    -
-                  </button>
-                  <p>{infant}</p>
-                  <button onClick={() => handleInfant(1)}>+</button>
-                </div>
-              </li>
-            </ul>
-          </nav>
+          {isActing && (
+            <nav className="drops active">
+              <ul>
+                <li>
+                  <Link href="#">Adults</Link>
+                  Ages 13 or above
+                  <div>
+                    <button
+                      onClick={() => handleAdult(-1)}
+                      disabled={adult === 0}
+                    >
+                      -
+                    </button>
+                    <p>{adult}</p>
+                    <button onClick={() => handleAdult(1)}>+</button>
+                  </div>
+                </li>
+                <li>
+                  <Link href="#">Children</Link>
+                  Ages 2-12
+                  <div>
+                    <button
+                      onClick={() => handleChild(-1)}
+                      disabled={child === 0}
+                    >
+                      -
+                    </button>
+                    <p>{child}</p>
+                    <button onClick={() => handleChild(1)}>+</button>
+                  </div>
+                </li>
+                <li>
+                  <Link href="#">Infants</Link>
+                  Under 2
+                  <div>
+                    <button
+                      onClick={() => handleInfant(-1)}
+                      disabled={infant === 0}
+                    >
+                      -
+                    </button>
+                    <p>{infant}</p>
+                    <button onClick={() => handleInfant(1)}>+</button>
+                  </div>
+                </li>
+              </ul>
+            </nav>
+          )}
         </div>
         <div
           className={toggleState === 2 ? "content active-content" : "content"}
         >
-          <h2>hello2</h2>
-          <hr />
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-          </p>
+          <div className="dataDiv">
+            <Tooltip title="Where are you going?" arrow>
+              <TextField
+                id="standard-basic"
+                disableUnderline={true}
+                margin="normal"
+                label="Locations"
+                onChange={locations}
+                InputProps={{
+                  classes: { notchedOutline: classes.noBorder },
+                }}
+              />
+            </Tooltip>
+            <SearchDate setTempVal={setTempVal} tempVal={tempVal} />
+            <Tooltip title="Click to view facinating places" arrow>
+              <div className="expertTab">
+                {" "}
+                <SearchRoundedIcon
+                  onClick={CustomerData}
+                  style={{
+                    width: "50px",
+                    borderRadius: "50%",
+                    height: "28px",
+                    // marginLeft: "50px",
+                    marginTop: "12px",
+                    cursor: "pointer",
+                    color: "white",
+                  }}
+                />
+                <p>SEARCH</p>
+              </div>
+            </Tooltip>
+          </div>
         </div>
         <div
           className={toggleState === 3 ? "content active-content" : "content"}
-        >
-          <h2>hell3</h2>
-          <hr />
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-            praesentium incidunt quia aspernatur quasi quidem facilis quo nihil
-            vel voluptatum?
-          </p>
-        </div>
+        ></div>
       </div>
     </div>
   );

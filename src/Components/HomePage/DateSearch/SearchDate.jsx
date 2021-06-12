@@ -6,13 +6,13 @@ import AdapterDateFns from "@material-ui/lab/AdapterDateFns";
 import LocalizationProvider from "@material-ui/lab/LocalizationProvider";
 import { makeStyles } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
+import Tooltip from "@material-ui/core/Tooltip";
 
 const useStyles = makeStyles(() => ({
   noBorder: {
     border: "none",
     borderRightStyle: "solid",
     borderRightColor: "grey",
-
   },
 }));
 export default function Calender({ setTempVal, tempVal }) {
@@ -36,22 +36,39 @@ export default function Calender({ setTempVal, tempVal }) {
         }}
         renderInput={(startProps, endProps) => (
           <React.Fragment>
-            {/* <InputLabel htmlFor="component-simple">Check-in</InputLabel> */}
-            <TextField {...startProps} />
+            <Tooltip title="Add Dates" arrow>
+              <TextField
+                variant="outlined"
+                disableUnderline={false}
+                margin="normal"
+                name="Check-out"
+                autoComplete="Check-out"
+                placeholder="Check out"
+                className={classes.textField}
+                InputProps={{
+                  classes: { notchedOutline: classes.noBorder },
+                }}
+                {...startProps}
+                helperText=""
+              />
+            </Tooltip>
             <Box></Box>
-            <TextField  
-              variant="outlined"
-              disableUnderline={true}
-              margin="normal"
-              name="Check-in"
-              autoComplete="Check-in"
-              placeholder="Check-in"
-              className={classes.textField}
-              InputProps={{
-                classes: { notchedOutline: classes.noBorder },
-              }}
-              {...endProps}
-            />
+            <Tooltip title="Add Dates" arrow>
+              <TextField
+                variant="outlined"
+                disableUnderline={false}
+                margin="normal"
+                name="Check-in"
+                autoComplete="Check-in"
+                placeholder="Check-in"
+                className={classes.textField}
+                InputProps={{
+                  classes: { notchedOutline: classes.noBorder },
+                }}
+                {...endProps}
+                helperText=""
+              />
+            </Tooltip>
           </React.Fragment>
         )}
       />

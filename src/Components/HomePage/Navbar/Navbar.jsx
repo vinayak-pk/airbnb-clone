@@ -5,7 +5,7 @@ import LanguageIcon from "@material-ui/icons/Language";
 import UserClick from "./UserClick";
 import Logo from "./Logo.svg";
 import NavData from "./NavData";
-import Banner from "../Banner/Banner";
+// import link from "react-router-dom";
 // import ScrollToTop from "react-scroll-to-top";
 
 export const Navbar = () => {
@@ -41,7 +41,10 @@ export const Navbar = () => {
 
   return (
     <>
-     
+      <div className="covidBar">
+        <p href="#">Get the latest on our COVID-19 response</p>
+      </div>
+
       <div className={navbar ? "heading active" : "heading"}>
         <div>
           <img className="header__icon" src={Logo} alt="logo" />
@@ -49,7 +52,7 @@ export const Navbar = () => {
         {!showChild ? (
           <div onClick={disp} className="header__center ">
             Start your search
-            <SearchIcon />
+            <SearchIcon className="SearchIcon" />
           </div>
         ) : (
           <NavData />
@@ -57,11 +60,11 @@ export const Navbar = () => {
 
         <div className="header__right">
           <p>Become a host</p>
-          <LanguageIcon />
+          <LanguageIcon  style={{width:"26px",height:"20px",}} />
           <UserClick />
         </div>
       </div>
-      <Banner />
+      {/* <Banner /> */}
     </>
   );
 };

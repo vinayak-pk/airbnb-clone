@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./Banner.module.css";
 import { Button } from "@material-ui/core";
-
 import { useHistory } from "react-router-dom";
 
 function Banner() {
@@ -14,7 +13,13 @@ function Banner() {
           src="https://airbnb-photos.s3.amazonaws.com/pictures/Storefronts/may2021_HP_clearLogo_en_l/original/9850ff2c-bd0b-4f37-9d33-84f10a566045.svg"
           alt="icon2"
         />
-        <span>Introducing 100+ upgrades across our entire service</span>
+        <br />
+        <span>
+          Introducing 100+
+          <br /> upgrades across
+          <br /> our entire service
+        </span>
+        <br />
         <Button onClick={() => history.push()} variant="outlined">
           Learn What's new
         </Button>

@@ -1,7 +1,24 @@
-/* .main_Body {
+body {
   width: 100%;
-  
-} */
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+    Helvetica Neue, sans-serif;
+}
+.covidBar {
+  padding: 2px;
+  width: 100%;
+  height: 9vh;
+  background-color: #222222;
+}
+
+.covidBar p {
+  color: #a3a3a3;
+  font-size: 14;
+  text-align: center;
+  text-decoration: underline 1px solid rgb(127, 137, 137);
+  font-size: 15px;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue,
+    sans-serif;
+}
 .heading {
   display: flex;
   justify-content: space-between;
@@ -12,10 +29,15 @@
   background: url("https://a0.muscache.com/im/pictures/57476340-4280-4012-9b97-5d7df5fa309d.jpg?im_w=2560");
   width: 100%;
   height: 13vh;
+  z-index: 2;
+  background-position: 11% 1%;
+  background-repeat: no-repeat;
+  color: white;
 }
 .heading.active {
   /* background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAA1BMVEX///+nxBvIAAAASElEQVR4nO3BgQAAAADDoPlTX+AIVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwDcaiAAFXD1ujAAAAAElFTkSuQmCC"); */
   background: white;
+  color: black;
 }
 
 .header__icon {
@@ -23,20 +45,31 @@
   height: 40px;
   margin-left: 20px;
   margin-top: 20px;
+  padding: 0px 40px;
 }
 
 .header__center {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  width: 25%;
+  margin-left: 150px;
+  width: 20%;
   margin-top: 20px;
-  padding: 10px;
-  height: 50px;
+  padding: 9px 17px;
+  height: 45px;
   border: 1px solid lightgray;
   border-radius: 999px;
+  color: #222222;
+  font-weight: 500;
+  box-shadow: 1px 1px 1px 1px lightgray;
 }
-
+.SearchIcon {
+  background-color: rgb(255, 50, 84);
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  padding: 0.1em;
+  color: white;
+}
 /* .header__center > input {
   border: none;
   padding: 10px;
@@ -48,7 +81,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 22%;
+  width: 25%;
+  padding: 0px 45px;
+  margin-right: 20px;
 }
 
 /* .formInputMainDiv {
@@ -83,11 +118,11 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 55%;
+  width: 33%;
   height: 40vh;
   background: transparent;
   margin: 30px auto 0;
-  margin-left: 200px;
+  margin-right: 130px;
   word-break: break-all;
   /* border: 1px solid rgba(0, 0, 0, 0.274); */
 }
@@ -100,15 +135,19 @@
   background-color: transparent;
 }
 .tabs {
-  padding: 9px;
+  padding: 3px;
   text-align: center;
-  width: 40%;
+  width: 49%;
   background: rgba(102, 90, 90, 0.075);
   cursor: pointer;
   /* border-bottom: 1px solid rgba(0, 0, 0, 0.274); */
   box-sizing: content-box;
   position: relative;
   outline: none;
+  color: white;
+  font-size: 16px !important;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+    Helvetica Neue, sans-serif;
 }
 .tabs:not(:last-child) {
   border-right: 1px solid rgba(0, 0, 0, 0.274);
@@ -126,48 +165,43 @@
   bottom: -7px;
   left: 50%;
   transform: translateX(-50%);
-  width: calc(20% + 1px);
-  height: 3px;
-  background: rgb(88, 147, 241);
+  width: calc(10% + 5px);
+  height: 2px;
+  background: rgb(255, 255, 255);
 }
 
 button {
   border: none;
 }
 .content-tabs {
+  /* border: 1px solid black; */
+  width: 190%;
   flex-grow: 1;
+  margin: 15px -160px 10px;
 }
 .content {
   background: transparent;
-  padding: 15px;
+  padding: 12px;
   width: 100%;
-  height: 100%;
+  align-items: center;
+  height: 40%;
+  margin-right: 100px;
   display: none;
 }
-/* .content h2 {
-  padding: 0px 0 5px 0px;
-} */
-/* .content hr {
-  width: 100px;
-  height: 2px;
-  background: #222;
-  margin-bottom: 5px;
-}
-.content p {
-  width: 100%;
-  height: 100%;
-} */
+
 .active-content {
   display: block;
 }
 
 .dataDiv {
-  padding: 5px;
+  width: 100%;
+  padding: 0px;
   display: flex;
   /* border: 1px solid black; */
   border-radius: 999px;
-  height: 75px;
+  height: 65px;
   background: white;
+  box-shadow: 0px 0px 10px 0px black;
 }
 
 .dataDiv input {
@@ -177,6 +211,24 @@ button {
 .dataDiv button {
   background: transparent;
   color: grey;
-  font-size: 14px;
-  width: 100px;
+  font-size: 16px;
+  width: 120px;
+  padding: 33px;
+}
+
+.expertTab {
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(231, 31, 89);
+  margin-left: 50px;
+  margin-top: 8px;
+  /* padding:0px; */
+  border-radius: 999px;
+  height: 50px;
+  width: 160px;
+}
+
+.expertTab p {
+  margin-left: -20px;
+  font-weight: bold;
 }
