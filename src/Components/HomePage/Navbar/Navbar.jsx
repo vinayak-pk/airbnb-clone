@@ -6,12 +6,16 @@ import UserClick from "./UserClick";
 import Logo from "./Logo.svg";
 import NavData from "./NavData";
 // import link from "react-router-dom";
-// import ScrollToTop from "react-scroll-to-top";
+import { useHistory } from "react-router-dom";
 
 export const Navbar = () => {
   const [showChild, setShowChild] = useState(true);
   const [navbar, setNavbar] = useState(false);
+  let history = useHistory();
 
+  function handleClick() {
+    history.push("/hoisting");
+  }
   const disp = () => {
     setShowChild(true);
   };
@@ -59,8 +63,8 @@ export const Navbar = () => {
         )}
 
         <div className="header__right">
-          <p>Become a host</p>
-          <LanguageIcon  style={{width:"26px",height:"20px",}} />
+          <p onClick={handleClick}>Become a host</p>
+          <LanguageIcon style={{ width: "26px", height: "20px" }} />
           <UserClick />
         </div>
       </div>
