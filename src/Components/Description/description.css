@@ -41,3 +41,45 @@ hr{
     font-size: 12px;
     padding-right: 10px;
 }
+
+.amenbody{
+    width:100%;
+}
+
+.amenval{
+    display:flex;
+    width:100;
+    flex-grow:1;
+    flex-wrap:wrap;
+}
+
+.avalbody{
+    width:50%;
+    margin: 1% 0;
+    color: rgb(65, 65, 65);
+}
+.amenbutton{
+    width:35%;
+    font-size: 15px;
+    font-weight:600;
+    padding: 2%;
+    margin:3% 0;
+    border-radius: 10px;
+    border:1px solid rgb(29, 29, 29);
+    background-color: white;
+}
+
+.amenind{
+    text-decoration: line-through;
+}
+.amennind{
+    text-decoration: none;
+}
+
+.amenbutton:hover{
+    text-decoration:underline;
+  }
+
+.calender{
+    border: 0px;
+}

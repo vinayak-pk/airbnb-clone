@@ -1,6 +1,6 @@
 import React from "react"
 
-import "../Payment/Summary"
+import "../Payment/Summary.css"
 export function Navsum(){
     return(
         <div className="sumNav">

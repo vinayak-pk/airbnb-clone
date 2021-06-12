@@ -7,6 +7,7 @@ import "./description.css";
 import { Details } from "./Details";
 import { Roomconfig } from "./Roomconfig";
 import { Amenties } from "./Amenities";
+import Calender from "./Calender"
 let styles = makeStyles((theme) => ({
   root: {
     padding: "10px 0px",
@@ -57,8 +58,15 @@ export function Description() {
           <hr />
         </div>
       )}
+      <br/>
+      <h2>Sleeping arragements</h2>
       <Roomconfig />
-    
+      <br/>
+      <hr/>
+      <Amenties data={data}/>
+      <br/>
+      <hr/>
+      <Calender/>
     </div>
   );
 }

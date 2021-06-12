@@ -9,7 +9,8 @@ const useStyles = makeStyles((theme) => ({
       flexWrap: 'wrap',
       justifyContent: 'space-around',
       backgroundColor: 'white', 
-      gap:"10px"
+      gap:"10px",
+      width:"104%",
     },
     gridList: {
       width: 500,
@@ -17,7 +18,8 @@ const useStyles = makeStyles((theme) => ({
     },
     gridPad:{
       padding: '0.7%',
-      paddingBottom:'0px'
+      paddingBottom:'0px',
+      width: '100%',
     },
     box:{
       paddingTop: '20px' 

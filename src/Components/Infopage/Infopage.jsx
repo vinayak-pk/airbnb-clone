@@ -15,7 +15,7 @@ export function Infopage() {
   console.log("here");
   React.useEffect(() => {
     dispatch(getData(1));
-  }, [dispatch]);
+  }, [dispatch])
   let reviews = data?.review
   console.log(data)
   
@@ -46,7 +46,7 @@ export function Infopage() {
         </div>
       </div>
       <Photogrid/>
-      <div style={{display:"flex",gap:"10%"}}>
+      <div style={{display:"flex",gap:"8%"}}>
         <Grid  xs={7}>
             <Description/>
           </Grid>
