@@ -7,9 +7,12 @@ import {
 } from "./actionTypes";
 
 const initState = {
-  location: "",
+  location: {},
   customerDate: "",
   guests: 0,
+  adult: 0,
+  child: 0,
+  infant: 0,
   data: [],
   error: false,
 };

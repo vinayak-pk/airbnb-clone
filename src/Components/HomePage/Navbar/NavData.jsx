@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector, shallowEqual } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import SearchRoundedIcon from "@material-ui/icons/SearchRounded";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
@@ -9,6 +9,7 @@ import "./Nav.css";
 import "./NavChild.css";
 import SearchDate from "../DateSearch/SearchDate";
 import { add_input } from "../../../Redux/NavBar/action";
+import LocationSearch from "./LocationSearch";
 
 const useStyles = makeStyles(() => ({
   noBorder: {
@@ -19,48 +20,42 @@ const useStyles = makeStyles(() => ({
 }));
 
 const initState = {
-  location: "",
+  location: {},
   customerDate: "",
   guests: 0,
+  adult: 0,
+  child: 0,
+  infant: 0,
 };
 const NavData = () => {
   const [toggleState, setToggleState] = useState(1);
   const [isActing, setisActing] = React.useState(false);
-  const [adult, setAdult] = React.useState(0);
-  const [child, setChild] = React.useState(0);
-  const [infant, setInfant] = React.useState(0);
-  const [showquant, setShowQuant] = useState(0);
   const [tempVal, setTempVal] = React.useState(initState);
+  const { adult, child, infant } = tempVal;
   const dispatch = useDispatch();
 
-  const handleAdult = (e) => {
-    setAdult((prev) => prev + e);
-    setShowQuant((prev) => prev + e);
-  };
-  const handleChild = (e) => {
-    setChild((prev) => prev + e);
-    setShowQuant((prev) => prev + e);
-  };
-  const handleInfant = (e) => {
-    setInfant((prev) => prev + e);
-    setShowQuant((prev) => prev + e);
+  const handlePeople = (name, val) => {
+    // let { name } = name;
+    setTempVal({
+      ...tempVal,
+      [name]: tempVal[name] + val,
+      guests: adult + child + infant,
+    });
   };
   const CustomerData = () => {
-    setTempVal({ ...tempVal, guests: showquant });
     dispatch(add_input(tempVal));
     setTempVal(initState);
   };
 
-  const locations = (e) => {
-    setTempVal({ ...tempVal, location: e.target.value });
-  };
-  // console.log(tempVal);
-  // console.log(showquant);
-  const { guests, location, customerDate } = useSelector(
-    (state) => state.Navbar,
-    shallowEqual
+  const { Navbar } = useSelector((state) => state);
+  console.log(
+    Navbar.guests,
+    Navbar.adult,
+    Navbar.child,
+    Navbar.infant,
+    Navbar.location,
+    Navbar.customerDate
   );
-  console.log(guests, location, customerDate);
   const toggleTab = (index) => {
     setToggleState(index);
   };
@@ -94,29 +89,20 @@ const NavData = () => {
         >
           <div className="dataDiv">
             <Tooltip title="Where are you going?" arrow>
-              <TextField
-                id="standard-basic"
-                disableUnderline={true}
-                margin="normal"
-                label="Locations"
-                onChange={locations}
-                InputProps={{
-                  classes: { notchedOutline: classes.noBorder },
-                }}
-              />
+              <LocationSearch tempVal={tempVal} setTempVal={setTempVal} />
             </Tooltip>
 
             <SearchDate setTempVal={setTempVal} tempVal={tempVal} />
 
-            {/* <Tooltip title="Add Guests" arrow> */}
-            <button
-              size="medium"
-              variant="default"
-              onClick={() => setisActing(!isActing)}
-            >
-              {showquant ? showquant : "Guests"}
-            </button>
-            {/* </Tooltip> */}
+            <Tooltip title="Add Guests" arrow>
+              <button
+                size="medium"
+                variant="default"
+                onClick={() => setisActing(!isActing)}
+              >
+                {tempVal.guests !== 0 ? tempVal.guests : "Guests"}
+              </button>
+            </Tooltip>
             <Tooltip title="Click to view facinating places" arrow>
               <SearchRoundedIcon
                 onClick={CustomerData}
@@ -124,7 +110,7 @@ const NavData = () => {
                   width: "50px",
                   borderRadius: "50%",
                   height: "50px",
-                  marginLeft: "55px",
+                  marginLeft: "0px",
                   marginTop: "7px",
                   backgroundColor: "rgb(255, 50, 84)",
                   cursor: "pointer",
@@ -142,13 +128,13 @@ const NavData = () => {
                   Ages 13 or above
                   <div>
                     <button
-                      onClick={() => handleAdult(-1)}
+                      onClick={() => handlePeople("adult", -1)}
                       disabled={adult === 0}
                     >
                       -
                     </button>
                     <p>{adult}</p>
-                    <button onClick={() => handleAdult(1)}>+</button>
+                    <button onClick={() => handlePeople("adult", 1)}>+</button>
                   </div>
                 </li>
                 <li>
@@ -156,13 +142,13 @@ const NavData = () => {
                   Ages 2-12
                   <div>
                     <button
-                      onClick={() => handleChild(-1)}
+                      onClick={() => handlePeople("child", -1)}
                       disabled={child === 0}
                     >
                       -
                     </button>
                     <p>{child}</p>
-                    <button onClick={() => handleChild(1)}>+</button>
+                    <button onClick={() => handlePeople("child", 1)}>+</button>
                   </div>
                 </li>
                 <li>
@@ -170,13 +156,13 @@ const NavData = () => {
                   Under 2
                   <div>
                     <button
-                      onClick={() => handleInfant(-1)}
+                      onClick={() => handlePeople("infant", -1)}
                       disabled={infant === 0}
                     >
                       -
                     </button>
                     <p>{infant}</p>
-                    <button onClick={() => handleInfant(1)}>+</button>
+                    <button onClick={() => handlePeople("infant", 1)}>+</button>
                   </div>
                 </li>
               </ul>
@@ -193,7 +179,7 @@ const NavData = () => {
                 disableUnderline={true}
                 margin="normal"
                 label="Locations"
-                onChange={locations}
+                // onChange={locations}
                 InputProps={{
                   classes: { notchedOutline: classes.noBorder },
                 }}

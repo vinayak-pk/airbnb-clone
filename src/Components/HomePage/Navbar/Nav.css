@@ -129,10 +129,12 @@ body {
 
 .bloc-tabs {
   display: flex;
+  
 }
 
 .bloc-tabs button {
   background-color: transparent;
+  
 }
 .tabs {
   padding: 3px;
@@ -154,6 +156,7 @@ body {
 }
 
 .active-tabs {
+
   background: transparent;
   border-bottom: 1px solid transparent;
 }
@@ -168,6 +171,7 @@ body {
   width: calc(10% + 5px);
   height: 2px;
   background: rgb(255, 255, 255);
+  
 }
 
 button {
@@ -231,4 +235,12 @@ button {
 .expertTab p {
   margin-left: -20px;
   font-weight: bold;
+}
+
+.autocomplete-dropdown-container{
+  background: transparent;
+  margin-top: 2px;
+  right: 4;
+  width: 18vw;
+  padding:10px;
 }

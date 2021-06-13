@@ -1,15 +1,17 @@
 .drops {
-  background: #fcdddd;
+  background: #fcfcfc;
   border-radius: 8px;
-  /* position: relative; */
-  top: 40px;
+  padding: 10px;
+  margin-left: 540px;
+  top: 50px;
   right: 10;
-  width: 30vw;
+  width: 20vw;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
   opacity: 0;
   visibility: hidden;
   transform: translateY(-20px);
   transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+  color: #333333;
 }
 
 .drops.active {
@@ -48,5 +50,5 @@
 
 .drops li div button {
   background-color: transparent;
-  border:transparent;
+  border: transparent;
 }
