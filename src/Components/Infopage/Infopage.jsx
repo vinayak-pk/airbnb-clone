@@ -8,6 +8,7 @@ import { Description } from "../Description/Description";
 import { Photogrid } from "../Collage/Collage";
 import { Summary } from "../Payment/Summary";
 import {Navsum} from "../Navsum/Navsum"
+import {Comments} from "../Comments/Comments"
 export function Infopage() {
   const [infonav,setInfonav] = React.useState(false);
   let dispatch = useDispatch();
@@ -46,7 +47,7 @@ export function Infopage() {
         </div>
       </div>
       <Photogrid/>
-      <div style={{display:"flex",gap:"8%"}}>
+      <div style={{display:"flex",gap:"8%",margin:"10px 0"}}>
         <Grid  xs={7}>
             <Description/>
           </Grid>
@@ -54,6 +55,9 @@ export function Infopage() {
               <Summary data={data}/>
           </Grid>
       </div>
+      <br/>
+      <hr/>
+      <Comments data={data}/>
     </div>
     </>
   );
