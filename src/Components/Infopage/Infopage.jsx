@@ -3,16 +3,19 @@ import { useDispatch, useSelector } from "react-redux";
 import {Grid} from "@material-ui/core"
 
 import { getData } from "../../Redux/infopage/action";
+import { InfoMap } from "../Infomap/Map";
 import styles from  "./infopage.module.css";
 import { Description } from "../Description/Description";
 import { Photogrid } from "../Collage/Collage";
 import { Summary } from "../Payment/Summary";
 import {Navsum} from "../Navsum/Navsum"
 import {Comments} from "../Comments/Comments"
+import {Ownerinfo} from "../Comments/Ownerinfo"
+
 export function Infopage() {
   const [infonav,setInfonav] = React.useState(false);
   let dispatch = useDispatch();
-  const {data} = useSelector((state) => state.info);
+  const {data,isLoading,isError} = useSelector((state) => state.info);
   console.log("here");
   React.useEffect(() => {
     dispatch(getData(1));
@@ -32,10 +35,12 @@ export function Infopage() {
       window.removeEventListener("scroll", scrollCallBack);
     };
   }, []);
-
-  return (<>
+  console.log(isLoading)
+   
+  return isLoading?<h1>Loading</h1>:isError?<h1>Error</h1>:(<>
     {infonav&&<Navsum/>}
     <div className={styles.boundary}>
+    <div >
       <div>
         <h2 className={styles.header}>{data.name}</h2>
         <div>
@@ -58,6 +63,15 @@ export function Infopage() {
       <br/>
       <hr/>
       <Comments data={data}/>
+    </div>
+    <br/>
+    <hr/>
+    <div className={styles.imapsholder}>
+      <h1>Location</h1>
+      <InfoMap isMarkerShown/>  
+    </div>
+    <hr/>
+    <Ownerinfo data={data}/>
     </div>
     </>
   );

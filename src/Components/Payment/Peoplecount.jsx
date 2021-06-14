@@ -5,9 +5,9 @@ import { Add, Remove } from "@material-ui/icons";
 
 import "./Summary.css";
 let init = {
-  a: 1,
-  c: 0,
-  i: 0,
+  adult: 1,
+  child: 0,
+  infant: 0,
 };
 
 const useStyles = makeStyles((theme) => ({
@@ -39,7 +39,9 @@ export function Peoplecount({data}) {
   const [show, setShow] = React.useState(false);
   const [counter, setCounter] = React.useState(init);
   const classes = useStyles();
-
+  const handleChange=(name,val)=>{
+        setCounter({...counter,[name]:counter[name]+val})
+  }
   return (
     <div>
       <div
@@ -62,13 +64,13 @@ export function Peoplecount({data}) {
               </Box>
               <Box className="scountbody">
                 <Box component="inline-block">
-                  <button className="sbuttons">
+                  <button disabled={counter.adult===1} onClick={()=>handleChange("adult",-1)} className="sbuttons">
                     <Remove fontSize="15px" />
                   </button>
                 </Box>
-                <Box component="span">{counter.a}</Box>
+                <Box component="span">{counter.adult}</Box>
                 <Box component="inline-block">
-                  <button className="sbuttons">
+                  <button  disabled={counter.adult===4} onClick={()=>handleChange("adult",1)} className="sbuttons">
                     <Add fontSize="15px" />
                   </button>
                 </Box>
@@ -80,13 +82,13 @@ export function Peoplecount({data}) {
               </Box>
               <Box className="scountbody">
                 <Box component="inline-block">
-                  <button className="sbuttons">
+                  <button  disabled={counter.child===0} onClick={()=>handleChange("child",-1)} className="sbuttons">
                     <Remove fontSize="15px" />
                   </button>
                 </Box>
-                <Box component="span">{counter.c}</Box>
+                <Box component="span">{counter.child}</Box>
                 <Box component="inline-block">
-                  <button className="sbuttons">
+                  <button  disabled={counter.child===3} onClick={()=>handleChange("child",1)} className="sbuttons">
                     <Add fontSize="15px" />
                   </button>
                 </Box>
@@ -98,13 +100,13 @@ export function Peoplecount({data}) {
               </Box>
               <Box className="scountbody">
                 <Box component="inline-block">
-                  <button className="sbuttons">
+                  <button  disabled={counter.infant===0} onClick={()=>handleChange("infant",-1)} className="sbuttons">
                     <Remove fontSize="15px" />
                   </button>
                 </Box>
-                <Box component="span">{counter.i}</Box>
+                <Box component="span">{counter.infant}</Box>
                 <Box component="inline-block">
-                  <button className="sbuttons">
+                  <button  disabled={counter.infant===2} onClick={()=>handleChange("infant",1)} className="sbuttons">
                     <Add fontSize="15px" />
                   </button>
                 </Box>

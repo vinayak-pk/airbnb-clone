@@ -2,7 +2,7 @@ import {NETWORK_REQUEST,REQUEST_FAILURE,REQUEST_SUCCESS} from "./action_type"
 
 const initstate = {
     data:{},
-    isLoading:false,
+    isLoading:true,
     isError:false
 }
 

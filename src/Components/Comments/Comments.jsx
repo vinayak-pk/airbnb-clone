@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from '@material-ui/core/Button' 
 import styles from "../Infopage/infopage.module.css"
 import "./Comment.css"
 export function Comments({data}){
@@ -30,12 +29,7 @@ export function Comments({data}){
               </div>)
               })}
            </div>
-           {reviews.length>5<button></button>}
+           {reviews.length>5&&(<button className="cobutton">Show all {reviews?.length} reviews</button>)}
         </div>
     )
-}
-
-function random(){
-    let num = (Math.random()*2);
-    return num.toFixed(1)
 }

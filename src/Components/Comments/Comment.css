@@ -23,3 +23,26 @@
 .ch5,.cp{
     margin: 5px 0;
 }
+.cobutton{
+    background:white;
+    border:1px solid black;
+    border-radius:10px;
+    padding:1.5% 2.5%;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.ownerbox{
+   display:inline-block;
+
+}
+.ownerbox:nth-child(2){
+    margin-left: 2%;
+}
+.ownermain{
+    margin:3% 0%;
+}
+
+.ownercontact{
+    margin:3% 0px;
+}
