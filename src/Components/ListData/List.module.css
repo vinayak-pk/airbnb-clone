@@ -1,0 +1,53 @@
+
+.img
+{
+    width:250px;
+    height:170px;
+    border-radius: 20px;
+}
+.border
+{
+    border: 0.5px solid rgb(185, 183, 183);
+}
+.flex
+{
+    display: flex;
+}
+.div1
+{
+    width: 250px;
+}
+.div
+{
+   width:60%;
+   padding-left:3%;
+}
+.padding
+{
+    padding-top: 30px;
+}
+.line
+{
+    border-bottom:0.1px solid grey;
+    padding-top: 15px;
+    width:40px
+
+}
+.font
+{
+    font-size: 14px;
+    color:grey
+}
+.float
+{
+    float: left;
+    margin-left: 60%;
+    margin-top:-12% ;
+    color:rgba(0, 0, 0, 0.411)
+}
+.color
+{
+    color:red;
+    font-size: medium;
+    margin-top: 18px;
+}
