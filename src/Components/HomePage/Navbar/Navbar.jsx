@@ -5,7 +5,6 @@ import LanguageIcon from "@material-ui/icons/Language";
 import UserClick from "./UserClick";
 import Logo from "./Logo.svg";
 import NavData from "./NavData";
-// import link from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
 export const Navbar = () => {

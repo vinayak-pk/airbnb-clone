@@ -1,0 +1,223 @@
+body {
+  width: 100%;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+    Helvetica Neue, sans-serif;
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* position: sticky; */
+  top: 0;
+  /* background-color: transparent; */
+  background: url(../Pictures/Banner.png);
+  width: 100%;
+  height: 13vh;
+  z-index: 2;
+  background-position: 0% 0%;
+  background-repeat: no-repeat;
+  color: white;
+}
+.heading.active {
+  /* background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAA1BMVEX///+nxBvIAAAASElEQVR4nO3BgQAAAADDoPlTX+AIVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwDcaiAAFXD1ujAAAAAElFTkSuQmCC"); */
+  background: white;
+  color: black;
+}
+
+.header__icon {
+  object-fit: contain;
+  height: 40px;
+  margin-left: 20px;
+  margin-top: 20px;
+  padding: 0px 40px;
+}
+
+.header__center {
+  display: flex;
+  justify-content: space-between;
+  /* top:100vh; */
+  position: static ;
+  margin-left: 150px;
+  width: 20%;
+  margin-top: 20px;
+  padding: 9px 17px;
+  height: 45px;
+  border: 1px solid lightgray;
+  border-radius: 999px;
+  color: #222222;
+  font-weight: 500;
+  box-shadow: 1px 1px 1px 1px lightgray;
+  background-color: rgb(255, 50, 84);
+
+}
+.SearchIcon {
+  background-color: rgb(255, 50, 84);
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  padding: 0.1em;
+  color: white;
+}
+/* .header__center > input {
+  border: none;
+  padding: 10px;
+  outline-width: 0;
+  width: 250px;
+} */
+
+.header__right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 25%;
+  padding: 0px 45px;
+  margin-right: 20px;
+}
+
+/* .formInputMainDiv {
+  padding-top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background-color: "transparent";
+} */
+.searchimg {
+  background-color: rgb(255, 50, 84);
+  border-radius: 50%;
+  /* width: 30px; */
+}
+
+/* .sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.active {
+  display: block
+}
+.inactive {
+  display: none
+} */
+/* .inactive {
+  display: none
+}  */
+
+.tabNavigation {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 33%;
+  height: 40vh;
+  background: transparent;
+  margin: 30px auto 0;
+  margin-right: 130px;
+  word-break: break-all;
+  /* border: 1px solid rgba(0, 0, 0, 0.274); */
+}
+
+.bloc-tabs {
+  display: flex;
+}
+
+.bloc-tabs button {
+  background-color: transparent;
+}
+.tabs {
+  padding: 3px;
+  text-align: center;
+  width: 49%;
+  background: rgba(102, 90, 90, 0.075);
+  cursor: pointer;
+  /* border-bottom: 1px solid rgba(0, 0, 0, 0.274); */
+  box-sizing: content-box;
+  position: relative;
+  outline: none;
+  color: white;
+  font-size: 16px !important;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+    Helvetica Neue, sans-serif;
+}
+.tabs:not(:last-child) {
+  border-right: 1px solid rgba(0, 0, 0, 0.274);
+}
+
+.active-tabs {
+  background: transparent;
+  border-bottom: 1px solid transparent;
+}
+
+.active-tabs::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(10% + 5px);
+  height: 2px;
+  background: rgb(255, 255, 255);
+}
+
+button {
+  border: none;
+}
+.content-tabs {
+  /* border: 1px solid black; */
+  width: 190%;
+  flex-grow: 1;
+  margin: 15px -160px 10px;
+}
+.content {
+  background: transparent;
+  padding: 12px;
+  width: 100%;
+  align-items: center;
+  height: 40%;
+  margin-right: 100px;
+  display: none;
+}
+
+.active-content {
+  display: block;
+}
+
+.dataDiv {
+  width: 100%;
+  padding: 0px;
+  display: flex;
+  /* border: 1px solid black; */
+  border-radius: 999px;
+  height: 65px;
+  background: white;
+  box-shadow: 0px 0px 10px 0px black;
+}
+
+.dataDiv input {
+  border: none;
+}
+
+.dataDiv button {
+  background: transparent;
+  color: grey;
+  font-size: 16px;
+  width: 120px;
+  padding: 33px;
+}
+
+.expertTab {
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(231, 31, 89);
+  margin-left: 50px;
+  margin-top: 8px;
+  /* padding:0px; */
+  border-radius: 999px;
+  height: 50px;
+  width: 160px;
+}
+
+.expertTab p {
+  margin-left: -20px;
+  font-weight: bold;
+}
