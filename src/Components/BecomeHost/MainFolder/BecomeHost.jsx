@@ -1,10 +1,12 @@
 import React, { useEffect } from "react";
 import HostBanner from "../HostBanner/HostBanner";
-import { HostNavbar } from "../HostNavbar/HostNavbar";
 import FixedNavbar from "../HostNavbar/FixedNavbar";
+import HostCarousel from "../HostCarousel/HostCarousel";
+import HostingWorks from "../HostingWorks/HostingWorks";
+import { Footer } from "../Footer/Footer";
 const BecomeHost = () => {
   const [showChild, setShowChild] = React.useState(false);
-  const [navbar, setNavbar] = React.useState(false);
+  // const [navbar, setNavbar] = React.useState(false);
 
   useEffect(() => {
     const scrollCallBack = window.addEventListener("scroll", () => {
@@ -20,63 +22,24 @@ const BecomeHost = () => {
     };
   }, []);
 
-  const changeBackground = () => {
-    if (window.scrollY >= 480) {
-      // console.log(window.scrollY);
-      setNavbar(true);
-    } else {
-      setNavbar(false);
-    }
-  };
+  // const changeBackground = () => {
+  //   if (window.scrollY >= 480) {
+  //     // console.log(window.scrollY);
+  //     setNavbar(true);
+  //   } else {
+  //     setNavbar(false);
+  //   }
+  // };
 
-  window.addEventListener("scroll", changeBackground);
+  // window.addEventListener("scroll", changeBackground);
   return (
-    <div>
-      {/* <HostNavbar /> */}
+    <div className="mainBody">
       <HostBanner />
       {showChild && <FixedNavbar />}
-      <div>ksnknksnkkkdn</div>
-      <div>ksnknksnkkkdn</div>
-      <div>ksnknksnkkkdn</div>
-      <div>ksnknksnkkkdn</div>
-      <div>ksnknksnkkkdn</div>
-      <div>ksnknksnkkkdn</div>
-      <div>ksnknksnkkkdn</div>
-      <div>ksnknksnkkkdn</div>
-      <div>ksnknksnkkkdn</div>
-      <div>ksnknksnkkkdn</div>
-      <div>ksnknksnkkkdn</div>
-      <div>ksnknksnkkkdn</div>
-      <div>ksnknksnkkkdn</div>
-      <div>ksnknksnkkkdn</div>
-      <div>ksnknksnkkkdn</div>
-      <div>ksnknksnkkkdn</div>
-      <div>ksnknksnkkkdn</div>
-      <div>ksnknksnkkkdn</div>
-      <div>ksnknksnkkkdn</div>
-      <div>ksnknksnkkkdn</div>
-      <div>ksnknksnkkkdn</div>
-      <div>ksnknksnkkkdn</div>
-      <div>ksnknksnkkkdn</div>
-      <div>ksnknksnkkkdn</div>
-      <div>ksnknksnkkkdn</div>
-      <div>ksnknksnkkkdn</div>
-      <div>ksnknksnkkkdn</div>
-      <div>ksnknksnkkkdn</div>
-      <div>ksnknksnkkkdn</div>
-      <div>ksnknksnkkkdn</div>
-      <div>ksnknksnkkkdn</div>
-      <div>ksnknksnkkkdn</div>
-      <div>ksnknksnkkkdn</div>
-      <div>ksnknksnkkkdn</div>
-      <div>ksnknksnkkkdn</div>
-      <div>ksnknksnkkkdn</div>
-      <div>ksnknksnkkkdn</div>
-      <div>ksnknksnkkkdn</div>
-      <div>ksnknksnkkkdn</div>
-      <div>ksnknksnkkkdn</div>
-      <div>ksnknksnkkkdn</div>
-      <div>ksnknksnkkkdn</div>
+      <HostCarousel />
+      <HostingWorks />
+
+      <Footer />
     </div>
   );
 };

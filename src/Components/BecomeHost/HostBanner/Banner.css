@@ -1,0 +1,46 @@
+.banner {
+  background: url(../Pictures/Banner.png);
+  height: 85vh;
+  /* background-position:5% -70%; */
+  /* background-repeat: no-repeat; */
+  width: 100%;
+}
+
+.banner__info {
+  /* border:1px solid black; */
+  color: #1f1f1f;
+  padding-top: 17vh;
+  padding-left: 70px;
+  padding-right: 50px;
+  padding-bottom: 40px;
+  width: 45vw;
+  text-align: left;
+}
+
+.banner__info > button {
+  background-color: rgb(229, 29, 83);
+  color: white;
+  text-transform: inherit;
+  margin-top: 275px;
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  height: 56px;
+  width: 165px;
+  border-radius: 10px;
+  border: transparent;
+}
+
+.banner__info > button:hover {
+  background-color: rgb(8, 8, 8);
+  color: #ffffff;
+  border: transparent;
+}
+
+.header__icon {
+  float: left;
+  object-fit: contain;
+  height: 40px;
+  margin-top: 21px;
+  padding: 0px 23px;
+}
