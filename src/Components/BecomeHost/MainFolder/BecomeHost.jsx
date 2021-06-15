@@ -4,6 +4,7 @@ import FixedNavbar from "../HostNavbar/FixedNavbar";
 import HostCarousel from "../HostCarousel/HostCarousel";
 import HostingWorks from "../HostingWorks/HostingWorks";
 import { Footer } from "../Footer/Footer";
+import InputFindout from "../InputFindout/InputFindout";
 const BecomeHost = () => {
   const [showChild, setShowChild] = React.useState(false);
   // const [navbar, setNavbar] = React.useState(false);
@@ -38,7 +39,7 @@ const BecomeHost = () => {
       {showChild && <FixedNavbar />}
       <HostCarousel />
       <HostingWorks />
-
+      <InputFindout />
       <Footer />
     </div>
   );
