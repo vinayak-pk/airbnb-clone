@@ -107,15 +107,15 @@ const NavData = () => {
               <SearchRoundedIcon
                 onClick={CustomerData}
                 style={{
-                  width: "50px",
+                  width: "48px",
                   borderRadius: "50%",
-                  height: "50px",
-                  marginLeft: "0px",
-                  marginTop: "7px",
+                  height: "48px",
+                  marginLeft: "2px",
+                  marginTop: "5px",
                   backgroundColor: "rgb(255, 50, 84)",
                   cursor: "pointer",
                   color: "white",
-                  padding: "12px",
+                  padding: "4px",
                 }}
               />
             </Tooltip>

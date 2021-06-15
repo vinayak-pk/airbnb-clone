@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 import Tooltip from "@material-ui/core/Tooltip";
+import EditLocationIcon from "@material-ui/icons/EditLocation";
 import PlacesAutocomplete, {
   geocodeByAddress,
-  // geocodeByPlaceId,
+  geocodeByPlaceId,
   getLatLng,
 } from "react-places-autocomplete";
 import "./Nav.css";
@@ -76,18 +77,22 @@ const LocationSearch = ({ setTempVal, tempVal }) => {
                       backgroundColor: "#e7e7e7",
                       cursor: "pointer",
                       color: "black",
-                      borderRadius: "10px",
+                      // borderRadius: "10px",
                       width: "500px",
                       padding: "20px",
                       borderBottom: "1px solid grey",
+                      display: "flex",
+                      justifyContent: "space-between",
                     }
                   : {
                       backgroundColor: "#ffffff",
                       color: "black",
-                      borderRadius: "10px",
+                      // borderRadius: "10px",
                       width: "500px",
                       padding: "20px",
-                      borderBottom: "1px solid grey",
+                      display: "flex",
+                      justifyContent: "space-between",
+                      // borderBottom: "1px solid grey",
                     };
                 return (
                   <div
@@ -96,6 +101,8 @@ const LocationSearch = ({ setTempVal, tempVal }) => {
                       style,
                     })}
                   >
+                    {" "}
+                    <EditLocationIcon />
                     <span>{suggestion.description}</span>
                   </div>
                 );

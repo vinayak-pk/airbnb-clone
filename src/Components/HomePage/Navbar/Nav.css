@@ -54,8 +54,8 @@ body {
   margin-left: 150px;
   width: 20%;
   margin-top: 20px;
-  padding: 9px 17px;
-  height: 45px;
+  padding: 7px 17px;
+  height: 40px;
   border: 1px solid lightgray;
   border-radius: 999px;
   color: #222222;
@@ -81,18 +81,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 25%;
+  width: 18%;
   padding: 0px 45px;
   margin-right: 20px;
 }
 
-/* .formInputMainDiv {
-  padding-top: 50%;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  background-color: "transparent";
-} */
 .searchimg {
   background-color: rgb(255, 50, 84);
   border-radius: 50%;
@@ -129,12 +122,10 @@ body {
 
 .bloc-tabs {
   display: flex;
-  
 }
 
 .bloc-tabs button {
   background-color: transparent;
-  
 }
 .tabs {
   padding: 3px;
@@ -156,7 +147,6 @@ body {
 }
 
 .active-tabs {
-
   background: transparent;
   border-bottom: 1px solid transparent;
 }
@@ -171,7 +161,6 @@ body {
   width: calc(10% + 5px);
   height: 2px;
   background: rgb(255, 255, 255);
-  
 }
 
 button {
@@ -181,7 +170,7 @@ button {
   /* border: 1px solid black; */
   width: 190%;
   flex-grow: 1;
-  margin: 15px -160px 10px;
+  margin: 15px -170px 10px;
 }
 .content {
   background: transparent;
@@ -189,7 +178,7 @@ button {
   width: 100%;
   align-items: center;
   height: 40%;
-  margin-right: 100px;
+  margin-right: 90px;
   display: none;
 }
 
@@ -237,10 +226,10 @@ button {
   font-weight: bold;
 }
 
-.autocomplete-dropdown-container{
+.autocomplete-dropdown-container {
   background: transparent;
   margin-top: 2px;
   right: 4;
   width: 18vw;
-  padding:10px;
+  padding: 10px;
 }
