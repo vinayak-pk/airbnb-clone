@@ -54,13 +54,11 @@
 .subDataContainer1 {
   padding: 5px;
   width: 50%;
-  border: 2px solid yellow;
   background: linear-gradient(to bottom, #ff0066 34%, #6600ff 129%);
 }
 .subDataContainer2 {
   /* padding: 5px; */
   width: 50%;
-  border: 2px solid green;
   /* background-color: yellowgreen; */
   background: url("https://media.wired.com/photos/59269cd37034dc5f91bec0f1/191:100/w_1280,c_limit/GoogleMapTA.jpg");
 }
@@ -102,4 +100,13 @@
   background-color: rgb(61, 61, 61);
   color: #ffff;
   border: transparent;
+}
+
+.inputfielCont input {
+  margin-top: 100px;
+  width: 60%;
+  height: 45px;
+  border-radius: 20px;
+  border: transparent;
+  box-shadow: 0px 0px 10px 0px black;
 }
