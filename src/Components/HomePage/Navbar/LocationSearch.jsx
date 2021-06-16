@@ -56,6 +56,7 @@ const LocationSearch = ({ setTempVal, tempVal }) => {
                 margin="normal"
                 label="Locations"
                 onChange={() => locations(coordinate)}
+                InputLabelProps={{ shrink: true }}
                 InputProps={{
                   classes: { notchedOutline: classes.noBorder },
                 }}

@@ -172,14 +172,15 @@ const NavData = () => {
         <div
           className={toggleState === 2 ? "content active-content" : "content"}
         >
-          <div className="dataDiv">
+          <div className="dataDiv2">
             <Tooltip title="Where are you going?" arrow>
               <TextField
                 id="standard-basic"
                 disableUnderline={true}
                 margin="normal"
-                label="Locations"
+                placeholder="Locations"
                 // onChange={locations}
+                InputLabelProps={{ shrink: true }}
                 InputProps={{
                   classes: { notchedOutline: classes.noBorder },
                 }}
