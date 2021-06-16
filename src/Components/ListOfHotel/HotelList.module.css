@@ -6,11 +6,42 @@
 }
 .left
 {
-  width: 60%;
+  width: 58%;
   height: 100%;
+  text-align: left;
+  padding-left: 2%;
+  display:flex;
+  flex-direction: column;
+  position: relative;
 }
 .right
 {
-    width: 40%;
+    width:40%;
     height: 100%;
+    position: fixed;
+    margin-left:60%;
+}
+.btn
+{
+  width:120px;
+  height:40px;
+  border-radius:20px;
+  border: 1px solid grey;
+  margin: 10px;
+  background-color: white;
+
+}
+.btn1
+{
+  width:150px;
+  height:40px;
+  border-radius:20px;
+  border: 1px solid grey;
+  margin: 10px;
+  margin-left: 0px;
+  background-color: white;
+}
+.page{ 
+  margin-left: 25%;
+  margin-top: 20px;
 }
