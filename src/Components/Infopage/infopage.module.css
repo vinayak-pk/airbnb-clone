@@ -1,0 +1,20 @@
+.boundary {
+    width:80%;
+    margin:auto;
+}
+
+.topdec{
+    text-decoration: underline;
+    color:rgb(141, 141, 141);
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.header{
+    margin-bottom: 0px;
+}
+
+.imapsholder{
+    margin: 5% 0%;
+    height:50%
+}

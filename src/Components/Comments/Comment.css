@@ -1,0 +1,48 @@
+.cmainbody{
+    display:flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    width: 100%;
+    margin:2% 0;
+}
+
+.commbody{
+    padding:1%;
+    width:45%;
+}
+
+.cimg{
+    border-radius: 50%;
+    width:50px;
+    margin:5px 10px 5px 0px; 
+}
+
+.comflexbox{
+    display:flex;
+}
+.ch5,.cp{
+    margin: 5px 0;
+}
+.cobutton{
+    background:white;
+    border:1px solid black;
+    border-radius:10px;
+    padding:1.5% 2.5%;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.ownerbox{
+   display:inline-block;
+
+}
+.ownerbox:nth-child(2){
+    margin-left: 2%;
+}
+.ownermain{
+    margin:3% 0%;
+}
+
+.ownercontact{
+    margin:3% 0px;
+}
