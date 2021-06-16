@@ -1,0 +1,120 @@
+import React from 'react';
+import Button from '@material-ui/core/Button';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import Slide from '@material-ui/core/Slide';
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
+
+export default function Login() {
+  const [open, setOpen] = React.useState(false);
+  const [dispatch]=useStateValue()
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+   const signIn=()=>
+    {
+    
+       auth.signInWithPopup(provider).then(result=>
+        {
+            dispatch({
+                type:actionTypes.SET_USER,
+                user:result.user
+            })
+        }
+       ).catch(error=>alert(error.message))
+    }
+  return (
+    <div>
+      <Button variant="outlined" color="primary" onClick={handleClickOpen}>
+        Login
+      </Button>
+      <Dialog
+        open={open}
+        TransitionComponent={Transition}
+        keepMounted
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-slide-title"
+        aria-describedby="alert-dialog-slide-description"
+      >
+          <Button onClick={signIn}>Sign In with Google</Button> 
+      </Dialog>
+    </div>
+  );
+}
+
+
+
+
+       <DialogTitle id="alert-dialog-slide-title">{"Use Google's location service?"}</DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-slide-description">
+            Let Google help apps determine location. This means sending anonymous location data to
+            Google, even when no apps are running.
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose} color="primary">
+            Disagree
+          </Button>
+          <Button onClick={handleClose} color="primary">
+            Agree
+          </Button>
+        </DialogActions>
+
+
+
+        const Login = () => {
+
+    const [dispatch]=useStateValue()
+
+    // const handleClick=()=>
+    // {
+    //   let number="+918830247987"
+    //   auth.signInWithPhoneNumber(number,provider).then(function(e)
+    //   {
+    //       let code=prompt("enter the otp","");
+    //       if(code===null) return;
+    //       e.confirm(code).then(function(result)
+    //       {
+    //           console.log(result.user,"user")
+    //           document.querySelector("h2").textContent=result.user.phoneNumber+"Number is Veriferd"
+    //       }).catch((error)=>
+    //       {
+    //           console.log(error)
+    //       })
+    //   })
+    // }
+
+    const signIn=()=>
+    {
+    
+       auth.signInWithPopup(provider).then(result=>
+        {
+            dispatch({
+                type:actionTypes.SET_USER,
+                user:result.user
+            })
+        }
+       ).catch(error=>alert(error.message))
+    }
+  return (
+     <div>
+               {/* <h2>login</h2>
+               <Button onClick={handleClick}>Click here</Button> */}
+               <Button onClick={signIn}>Sign In with Google</Button> 
+     </div>
+  )
+}
+
+export default Login
