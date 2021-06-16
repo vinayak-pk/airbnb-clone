@@ -1,0 +1,54 @@
+.drops {
+  background: #fcfcfc;
+  border-radius: 8px;
+  padding: 10px;
+  margin-left: 540px;
+  top: 50px;
+  right: 10;
+  width: 20vw;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+  color: #333333;
+}
+
+.drops.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.drops ul {
+  list-style: none;
+  padding: 7px;
+  margin: 0;
+}
+
+.drops li {
+  border-bottom: 1px solid #dddddd;
+  text-align: left;
+  font-size: small;
+}
+
+.drops li a {
+  text-align: left;
+  text-decoration: none;
+  color: #333333;
+  padding: 15px 20px;
+  display: block;
+}
+
+.drops li div {
+  margin: -40px auto;
+  display: flex;
+  justify-content: space-around;
+  float: right;
+  background-color: transparent;
+}
+
+.drops li div button {
+  background-color: transparent;
+  border: transparent;
+}
