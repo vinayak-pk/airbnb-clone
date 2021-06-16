@@ -1,4 +1,4 @@
-.search {
+/* .search {
     position: absolute;
     display: flex;
     background-color: white;
@@ -6,7 +6,7 @@
     left: 15%;
     width: 100vw;
     margin:10px -450px auto;
-}
+} */
 
 .search > h2 {
     display: flex;
@@ -20,7 +20,7 @@
     top: 380px;
 }
 
-.search > input {
+/* .search > input {
     width: 539px;
     padding: 20px;
     position: absolute;
@@ -29,12 +29,12 @@
     top: 420px;
     border: none;
   }
-  
+   */
 .search > input:focus {
     outline-width: 0;
 }
 
-.search > button {
+/* .search > button {
     position: absolute;
     left: 0;
     top: 480px;
@@ -42,7 +42,7 @@
     background-color: #ff7779;
     color: white;
     width: 579px;
-  }
+  } */
 
 .search > button:hover {
     background-color: white;

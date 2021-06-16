@@ -44,7 +44,7 @@ export default function Calender({ setTempVal, tempVal }) {
                 name="Check-out"
                 autoComplete="Check-out"
                 placeholder="Check out"
-                className={classes.textField}
+                InputLabelProps={{ shrink: true }}
                 InputProps={{
                   classes: { notchedOutline: classes.noBorder },
                 }}
@@ -61,7 +61,7 @@ export default function Calender({ setTempVal, tempVal }) {
                 name="Check-in"
                 autoComplete="Check-in"
                 placeholder="Check-in"
-                className={classes.textField}
+                InputLabelProps={{ shrink: true }}
                 InputProps={{
                   classes: { notchedOutline: classes.noBorder },
                 }}

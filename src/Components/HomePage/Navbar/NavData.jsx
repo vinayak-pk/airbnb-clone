@@ -4,7 +4,7 @@ import SearchRoundedIcon from "@material-ui/icons/SearchRounded";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 import Tooltip from "@material-ui/core/Tooltip";
-import { Link } from "react-router-dom";
+import { Link ,useHistory} from "react-router-dom";
 import "./Nav.css";
 import "./NavChild.css";
 import SearchDate from "../DateSearch/SearchDate";
@@ -33,7 +33,7 @@ const NavData = () => {
   const [tempVal, setTempVal] = React.useState(initState);
   const { adult, child, infant } = tempVal;
   const dispatch = useDispatch();
-
+  let history = useHistory();
   const handlePeople = (name, val) => {
     // let { name } = name;
     setTempVal({
@@ -43,8 +43,10 @@ const NavData = () => {
     });
   };
   const CustomerData = () => {
+    history.push('/hotelist')
     dispatch(add_input(tempVal));
     setTempVal(initState);
+
   };
 
   const { Navbar } = useSelector((state) => state);
@@ -107,15 +109,15 @@ const NavData = () => {
               <SearchRoundedIcon
                 onClick={CustomerData}
                 style={{
-                  width: "50px",
+                  width: "48px",
                   borderRadius: "50%",
-                  height: "50px",
-                  marginLeft: "0px",
-                  marginTop: "7px",
+                  height: "48px",
+                  marginLeft: "2px",
+                  marginTop: "5px",
                   backgroundColor: "rgb(255, 50, 84)",
                   cursor: "pointer",
                   color: "white",
-                  padding: "12px",
+                  padding: "4px",
                 }}
               />
             </Tooltip>
@@ -172,14 +174,15 @@ const NavData = () => {
         <div
           className={toggleState === 2 ? "content active-content" : "content"}
         >
-          <div className="dataDiv">
+          <div className="dataDiv2">
             <Tooltip title="Where are you going?" arrow>
               <TextField
                 id="standard-basic"
                 disableUnderline={true}
                 margin="normal"
-                label="Locations"
+                placeholder="Locations"
                 // onChange={locations}
+                InputLabelProps={{ shrink: true }}
                 InputProps={{
                   classes: { notchedOutline: classes.noBorder },
                 }}
