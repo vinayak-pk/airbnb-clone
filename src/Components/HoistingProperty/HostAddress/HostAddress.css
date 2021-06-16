@@ -1,0 +1,123 @@
+.containerHostPlace {
+    width: 100%;
+  }
+  .containerHostPlace__icon {
+    object-fit: contain;
+    height: 40px;
+    float: left;
+    margin-top: 10px;
+    padding: 0px 40px;
+  }
+  .dataContainer {
+    display: flex;
+    width: 100%;
+    border: 1px solid black;
+    height: 97vh;
+    /* background-color:red; */
+  }
+  .NavContainers {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .containerHostPlace__right {
+    padding-left: 410px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    height: 45px;
+    /* width: 20%; */
+    /* border: 1px solid lightgray; */
+    border-radius: 10px;
+    color: #222222;
+    font-weight: 500;
+    background-color: transparent;
+  }
+  
+  .containerHostPlace__right > button {
+    background-color: rgb(27, 25, 26);
+    color: white;
+    text-transform: inherit;
+    height: 30px;
+    width: 235px;
+    margin: 5px;
+    border-radius: 999px;
+    border: transparent;
+  }
+  
+  .containerHostPlace__right button:hover {
+    background-color: rgb(155, 155, 155);
+    color: #ffffff;
+    border: transparent;
+  }
+  
+  .subDataContainer1 {
+    padding: 5px;
+    width: 50%;
+    background: linear-gradient(to bottom, #ff0066 34%, #6600ff 129%);
+  }
+  .subDataContainer2 {
+    /* padding: 5px; */
+    width: 50%;
+    /* background-color: yellowgreen; */
+    background: url("https://media.wired.com/photos/59269cd37034dc5f91bec0f1/191:100/w_1280,c_limit/GoogleMapTA.jpg");
+  }
+  .subDatatext {
+    padding-left: 40px;
+    margin-top: 200px;
+    margin-right: 180px;
+    font-size: 22px;
+  }
+  .subDatatext h1 {
+    color: #ffff;
+    text-align: left;
+    font-weight: 500;
+  }
+  
+  .footerCont {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    bottom: 0;
+    width: 49%;
+    /* Height of the footer*/
+    height: 40px;
+    background: rgb(255, 255, 255);
+  }
+  
+  .footerCont button {
+    background-color: rgb(27, 25, 26);
+    color: white;
+    text-transform: inherit;
+    height: 40px;
+    width: 100px;
+    margin: 5px;
+    border-radius: 10px;
+    border: transparent;
+  }
+  .footerCont button:hover {
+    background-color: rgb(61, 61, 61);
+    color: #ffff;
+    border: transparent;
+  }
+
+  .inputfielCont{
+    margin: 20px auto;
+    border:1px solid black;
+    width: 70%;
+    height: 72vh;
+    box-shadow: 0px 0px 4px 0px black;
+    border-radius: 10px;
+    background-color:white;
+  }
+/*   
+  .inputfielCont input {
+    margin-top: 100px;
+    width: 60%;
+    height: 45px;
+    border-radius: 20px;
+    border: transparent;
+    box-shadow: 0px 0px 4px 0px black;
+  }
+   */
