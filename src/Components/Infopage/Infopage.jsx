@@ -4,6 +4,7 @@ import {Grid} from "@material-ui/core"
 import { useParams } from "react-router-dom";
 
 import { getData } from "../../Redux/Infopage/action";
+
 import { InfoMap } from "../Infomap/Map";
 import styles from  "./infopage.module.css";
 import { Description } from "../Description/Description";

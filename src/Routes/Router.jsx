@@ -49,7 +49,6 @@ const Router = () => {
           <NumGuest/>
         </Route>
     </Switch>
-  
     </>
   )
 }

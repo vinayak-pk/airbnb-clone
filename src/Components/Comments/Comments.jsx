@@ -2,7 +2,6 @@ import React from 'react';
 import styles from "../Infopage/infopage.module.css"
 import "./Comment.css"
 
-
 const names = []
 export function Comments({data}){
     

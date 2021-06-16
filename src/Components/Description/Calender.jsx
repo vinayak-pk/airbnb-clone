@@ -7,6 +7,7 @@ import {makeStyles} from "@material-ui/styles"
 import Box from "@material-ui/core/Box";
 import {useSelector} from "react-redux"
 
+
 import "./description.css"
 
 let useStyles = makeStyles((theme)=>({
@@ -18,6 +19,7 @@ let useStyles = makeStyles((theme)=>({
 export default function Calender() {
   const {customerDate} = useSelector((state) => state.Navbar)
   const [value, setValue] = React.useState(customerDate);
+
   const classes = useStyles();
 
   return (
@@ -33,6 +35,7 @@ export default function Calender() {
             <TextField  className={classes.root} {...startProps} />
             <Box sx={{ mx: 1 }}> to </Box>
             <TextField   className={classes.root} {...endProps} />
+
           </React.Fragment>
         )}
       />

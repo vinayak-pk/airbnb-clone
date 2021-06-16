@@ -63,9 +63,6 @@ export default function Login({open,setOpen}) {
   }
   return (
     <div>
-      {/* <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-        Login
-      </Button> */}
       <Dialog
         open={open}
         TransitionComponent={Transition}
