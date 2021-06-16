@@ -63,7 +63,7 @@ export function Infopage() {
       </div>
       <br/>
       <hr/>
-      {/* <Comments data={data}/> */}
+      <Comments data={data}/>
     </div>
     <br/>
     <hr/>

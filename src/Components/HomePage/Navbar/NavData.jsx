@@ -43,7 +43,7 @@ const NavData = () => {
     });
   };
   const CustomerData = () => {
-    history.push('/hotelist')
+    history.push('/hotelist');
     dispatch(add_input(tempVal));
     setTempVal(initState);
 
@@ -102,22 +102,22 @@ const NavData = () => {
                 variant="default"
                 onClick={() => setisActing(!isActing)}
               >
-                {tempVal.guests !== 0 ? tempVal.guests : "Guests"}
+                {adult + child + infant !== 0 ? adult + child + infant : "Guests"}
               </button>
             </Tooltip>
             <Tooltip title="Click to view facinating places" arrow>
               <SearchRoundedIcon
                 onClick={CustomerData}
                 style={{
-                  width: "48px",
+                  width: "25px",
                   borderRadius: "50%",
-                  height: "48px",
-                  marginLeft: "2px",
-                  marginTop: "5px",
+                  height: "25px",
+                  marginLeft: "10px",
+                  marginTop: "10px",
                   backgroundColor: "rgb(255, 50, 84)",
                   cursor: "pointer",
                   color: "white",
-                  padding: "4px",
+                  padding: "10px",
                 }}
               />
             </Tooltip>
