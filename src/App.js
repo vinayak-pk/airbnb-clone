@@ -1,15 +1,12 @@
-import "./App.css";
-import React, { useState } from "react";
-import { HomePage } from "./Components/HomePage/MainFolder/HomePage";
-// import SearchDate from "./Components/HomePage/DateSearch/SearchDate";
-// import LocationSearch from "./Components/HomePage/Navbar/LocationSearch";
+
+import './App.css';
+import HotelList from './Components/ListOfHotel/HotelList';
+
 
 function App() {
   return (
     <div className="App">
-      <HomePage />
-      {/* <SearchDate /> */}
-      {/* <LocationSearch /> */}
+  
     </div>
   );
 }
