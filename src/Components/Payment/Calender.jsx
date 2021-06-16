@@ -4,10 +4,17 @@ import DateRangePicker from '@material-ui/lab/DateRangePicker';
 import AdapterDateFns from '@material-ui/lab/AdapterDateFns';
 import LocalizationProvider from '@material-ui/lab/LocalizationProvider';
 import Box from '@material-ui/core/Box';
-
+import { makeStyles } from '@material-ui/styles';
+import {useSelector} from "react-redux"
+let useStyles = makeStyles((theme) => ({
+  input:{
+    padding: "10px 4px",
+  }
+}))
 export default function Calender() {
-  const [value, setValue] = React.useState([null, null]);
-
+  const {customerDate} = useSelector((state) => state.Navbar)
+  const [value, setValue] = React.useState(customerDate);
+   let classes = useStyles();
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
       <DateRangePicker
@@ -19,9 +26,14 @@ export default function Calender() {
         }}
         renderInput={(startProps, endProps) => (
           <React.Fragment>
-            <TextField {...startProps} helperText=""/>
+            <TextField InputProps={{
+              className: classes.input
+            }} {...startProps} helperText=""/>
             <Box ></Box>
-            <TextField {...endProps} helperText=""/>
+            <TextField InputProps={{
+              className: classes.input
+            }} {...endProps} helperText=""/>
+
           </React.Fragment>
         )}
       />

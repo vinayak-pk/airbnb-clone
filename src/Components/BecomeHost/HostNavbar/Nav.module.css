@@ -1,0 +1,54 @@
+body {
+  width: 100%;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+    Helvetica Neue, sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  position: sticky;
+  top: 0;
+  background-color: transparent;
+  background: white;
+  width: 100%;
+  height: 13vh;
+  z-index: 2;
+  background-position: 11% 1%;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+.header__right {
+  display: flex;
+  justify-content: space-between;
+  /* top:100vh; */
+  position: static;
+  margin-left: 72%;
+  margin-top: 10px;
+  padding: 9px 17px;
+  height: 45px;
+  width: 125px;
+  /* border: 1px solid lightgray; */
+  border-radius: 10px;
+  color: #222222;
+  font-weight: 500;
+  background-color: transparent;
+}
+
+.header__right > button {
+  background-color: rgb(229, 29, 83);
+  color: white;
+  text-transform: inherit;
+  height: 40px;
+  width: 155px;
+  border-radius: 10px;
+  border: transparent;
+}
+
+.header__right button:hover {
+  background-color: rgb(155, 155, 155);
+  color: #ffffff;
+  border: transparent;
+}

@@ -4,11 +4,13 @@ import styled from "./HotelList.module.css"
 import { useTranslation } from 'react-i18next';
 import List from '../ListData/List';
 import FilterButton from './FilterButton/FilterButton';
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
 import axios from "axios"
 import Pagination from '@material-ui/lab/Pagination';
+import { getHotelData } from '../../Redux/HotelData/action';
 const HotelList = () => {
     const { t, i18n } = useTranslation();
+    const dispatch = useDispatch();
     const [hotelList,setHotelList]=useState([])
     const data =useSelector(state=>state.hotel.data)
     const [page, setPage] = React.useState(1);
@@ -22,6 +24,7 @@ const HotelList = () => {
         i18n.changeLanguage(e.target.value);
     }
  useEffect(()=> {
+    dispatch(getHotelData())
     const requestParam = {
         url: `http://localhost:2244/hotel/all`,
         method: "get",

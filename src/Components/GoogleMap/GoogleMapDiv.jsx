@@ -1,14 +1,17 @@
 import React, { useState } from 'react'
 import { GoogleMap, withGoogleMap, withScriptjs, Marker, InfoWindow } from "react-google-maps";
-import hotel from "../../Data/hotel.json"
+import { useSelector } from 'react-redux';
 import styled from "./Google.module.css"
 const GoogleMapDiv = () => {
   const [list, setList] = useState(null)
- 
+  const data = useSelector(state=>state.hotel.data)
+  const loc = useSelector(state=>state.Navbar.location)
+  console.log(loc)
   return (
-    <GoogleMap defaultZoom={10} defaultCenter={{ lat: 26.808790, lng: 80.959085 }}>
+    <GoogleMap defaultZoom={10} defaultCenter={{ lat: loc.lat, lng: loc.lng }}>
       {
-        hotel.map((location) =>
+        data?.map((location) =>
+
         (
           <Marker key={location.id}
             position={{

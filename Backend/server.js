@@ -65,6 +65,14 @@ app.post('/hotel', async (req, res) => {
   const hotel = await Hotel.create(...body)
   res.status(201).json({ data: hotel })
 })
+
+app.get('/room/:id',async (req, res)=>{
+  let {id}=req.params;
+  console.log(req.params)
+  const hotel= await Hotel.findById(id).lean().exec()
+  res.status(201).json({ data: hotel })
+})
+
 app.get("/hotel/all", async (req,res)=>
 {
       let page=+req.query.page
@@ -74,6 +82,7 @@ app.get("/hotel/all", async (req,res)=>
       const hotel= await Hotel.find({}).skip(page*page_limit).limit(page_limit).lean().exec()
       res.status(200).json({data:hotel})
 })
+
 app.get('/hotel', async (req, res) => {
   let ans = filterData(req.query)
   let data

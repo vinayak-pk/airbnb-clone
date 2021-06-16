@@ -2,7 +2,7 @@ import React from "react";
 import { Typography, Box } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 import { Add, Remove } from "@material-ui/icons";
-
+import {useSelector} from "react-redux"
 import "./Summary.css";
 let init = {
   adult: 1,
@@ -36,8 +36,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 export function Peoplecount({data}) {
+  const {adult,child,infant} = useSelector((state) => state.Navbar)
   const [show, setShow] = React.useState(false);
-  const [counter, setCounter] = React.useState(init);
+  const [counter, setCounter] = React.useState({...init,adult,child,infant});
   const classes = useStyles();
   const handleChange=(name,val)=>{
         setCounter({...counter,[name]:counter[name]+val})

@@ -1,8 +1,10 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {Grid} from "@material-ui/core"
+import { useParams } from "react-router-dom";
 
-import { getData } from "../../Redux/infopage/action";
+import { getData } from "../../Redux/Infopage/action";
+
 import { InfoMap } from "../Infomap/Map";
 import styles from  "./infopage.module.css";
 import { Description } from "../Description/Description";
@@ -15,10 +17,11 @@ import {Ownerinfo} from "../Comments/Ownerinfo"
 export function Infopage() {
   const [infonav,setInfonav] = React.useState(false);
   let dispatch = useDispatch();
+  let param = useParams();
   const {data,isLoading,isError} = useSelector((state) => state.info);
   console.log("here");
   React.useEffect(() => {
-    dispatch(getData(1));
+    dispatch(getData(param.id));
   }, [dispatch])
   let reviews = data?.review
   console.log(data)
@@ -35,7 +38,6 @@ export function Infopage() {
       window.removeEventListener("scroll", scrollCallBack);
     };
   }, []);
-  console.log(isLoading)
    
   return isLoading?<h1>Loading</h1>:isError?<h1>Error</h1>:(<>
     {infonav&&<Navsum/>}

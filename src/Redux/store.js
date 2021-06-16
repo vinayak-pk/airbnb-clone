@@ -1,7 +1,20 @@
-import {createStore,applyMiddleware,combineReducers} from "redux"
-import Thunk from "redux-thunk"
-import {reducer as inforeducer} from "./infopage/reducer"
+import { hotelReducer } from "./HotelData/hotelReducer"
+import { createStore, applyMiddleware, compose, combineReducers } from "redux";
+import { reducer as NavBarReducer } from "./NavBar/reducer";
+import {reducer as InfoReducer} from "./Infopage/reducer"
+import thunk from "redux-thunk";
 
-let rootReducer = combineReducers({info:inforeducer})
+const rootReducer=combineReducers({
+    hotel:hotelReducer,
+    Navbar: NavBarReducer,
+    info: InfoReducer
+})
 
-export const store = createStore(rootReducer,applyMiddleware(Thunk));
+export const store = createStore(
+  rootReducer,
+  compose(
+    applyMiddleware(thunk),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  )
+);
+

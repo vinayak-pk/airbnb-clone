@@ -1,20 +1,26 @@
-import React, { Suspense } from 'react';
-import "./i18next"
+import React,{Suspense} from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import {store} from "./Redux/store"
 import { Provider } from "react-redux";
+import {store} from "./Redux/store";
 import { BrowserRouter } from "react-router-dom";
+import './i18next'
+import StateProvider from './Redux/Login/StateProvider'
+import reducer, { initState } from './Redux/Login/reducer'
 
-ReactDOM.render(
+
+ReactDOM.render( 
   <React.StrictMode>
     <BrowserRouter>
-    <Suspense fallback={(<div>loading ~~~</div>)}>
+    <StateProvider initState={initState} reducer={reducer}>
       <Provider store={store}>
-        <App />
+        <Suspense fallback={(<div>loading ~~~</div>)}>
+         <App />
+       </Suspense>
       </Provider>
-      </Suspense>
+    </StateProvider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")

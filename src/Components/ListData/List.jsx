@@ -4,7 +4,9 @@ import AliceCarousel from 'react-alice-carousel'
 import styled from './List.module.css'
 import { Divider } from '@material-ui/core'
 import StarRateRoundedIcon from '@material-ui/icons/StarRateRounded';
+import {useHistory} from "react-router-dom"
 const List = ({
+  _id,
   img,
   name,
   price,
@@ -33,7 +35,8 @@ const List = ({
   hostedby,
   review
 }) => {
-  const handleDragStart = (e) => e.preventDefault()
+  const handleDragStart = (e) => e.preventDefault();
+  const history = useHistory();
   const items = [
     <img
       className={styled.img}
@@ -66,10 +69,14 @@ const List = ({
       onDragStart={handleDragStart}
     />,
   ]
+  let handleClick=(id)=>{
+    history.push(`/info/${id}`)
+  }
   //className={styled.}
   //console.log(review)
   return (
-    <div className={styled.padding}>
+    <div  className={styled.padding}>
+
       {/* <div className={styled.flex1}>
           <div className={styled.div1}>
            <AliceCarousel autoWidth={true} mouseTracking items={items} />
@@ -78,12 +85,14 @@ const List = ({
            <p className={styled.font}>{no_of_guest} guests . {bedrooms} bedrooms . {beds} beds</p>
           </div>
         </div> */}
-      <div className={styled.flex}>
+      <div  className={styled.flex}>
         <div className={styled.div1}>
           <AliceCarousel autoWidth={true} mouseTracking items={items} />
         </div>
 
-        <div className={styled.div}>
+
+        <div onClick={()=>handleClick(_id)}  className={styled.div}>
+
           <div>{name}</div>
           <div className={styled.line}></div>
           <p className={styled.font}>

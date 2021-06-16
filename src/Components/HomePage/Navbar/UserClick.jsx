@@ -3,10 +3,11 @@ import "./UserClick.css";
 import ReorderIcon from "@material-ui/icons/Reorder";
 import { Avatar } from "@material-ui/core";
 import { Link } from "react-router-dom";
-export default function UserClick() {
-  const [isAct, setisAct] = React.useState(false);
-  const onClick = () => setisAct(!isAct);
+import Login from "../../Login/Login"
 
+export default function UserClick() {
+  const [open, setOpen] = React.useState(false)
+  const onClick = () => setOpen(!open);
   return (
     <div className="container">
       <div className="menu-container">
@@ -20,7 +21,8 @@ export default function UserClick() {
             }}
           />
         </button>
-        {isAct && (
+         {open && <Login open={open} setOpen={setOpen}/>}
+        {/* {isAct && (
           <nav className="menu active">
             <ul>
               <li>
@@ -52,7 +54,7 @@ export default function UserClick() {
               </li>
             </ul>
           </nav>
-        )}
+        )} */}
       </div>
     </div>
   );

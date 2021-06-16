@@ -5,6 +5,7 @@ import LanguageIcon from "@material-ui/icons/Language";
 import UserClick from "./UserClick";
 import Logo from "./Logo.svg";
 import NavData from "./NavData";
+import {Link} from "react-router-dom"
 // import link from "react-router-dom";
 // import ScrollToTop from "react-scroll-to-top";
 
@@ -59,7 +60,7 @@ export const Navbar = () => {
         )}
 
         <div className="header__right">
-          <p>Become a host</p>
+          <Link style={{color: 'white',textDecoration: 'none'}} to="/becomehost">Become a host</Link>
           <LanguageIcon  style={{width:"26px",height:"20px",}} />
           <UserClick />
         </div>

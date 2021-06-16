@@ -13,10 +13,10 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 })
 const useStyles = makeStyles((theme) => ({
   width: {
-    padding: '30px',
+    padding: '10%',
   },
   center1: {
-    textAlign: 'certer',
+    textAlign: 'center',
   },
   width2: {
     width: '90%',
@@ -39,8 +39,7 @@ const useStyles = makeStyles((theme) => ({
       fontSize:"12px"
   }
 }))
-export default function Login() {
-  const [open, setOpen] = React.useState(false)
+export default function Login({open,setOpen}) {
   const [dispatch] = useStateValue()
   const classes = useStyles()
 
@@ -64,9 +63,6 @@ export default function Login() {
   }
   return (
     <div>
-      <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-        Login
-      </Button>
       <Dialog
         open={open}
         TransitionComponent={Transition}
@@ -84,6 +80,9 @@ export default function Login() {
             label="Phone number"
             variant="outlined"
             className={classes.width2}
+            InputProps={{
+              style: {padding:"2% 0"}
+            }}
           />
           <div className={classes.font}>
             We’ll call or text you to confirm your number. Standard message and

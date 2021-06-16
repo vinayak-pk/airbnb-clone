@@ -69,15 +69,16 @@
     display:flex;
     overflow: hidden;
     background-color: white;
-    padding:0% 10%;
+    padding:0% 8%;
     top:0;
     width:100%;
-    gap:2%;
     z-index: 2;
+    border-bottom: 1px solid rgb(216, 216, 216);
 }
 
 .navtabs{
-    padding:2%;
+    padding:2% 1%;
+
     cursor: pointer;
 }
 
