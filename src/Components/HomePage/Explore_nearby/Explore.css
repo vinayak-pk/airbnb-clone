@@ -1,0 +1,36 @@
+.containing {
+  width: 100%;
+  padding: 5px;
+}
+
+.dispData {
+  /* display:grid; */
+  padding: 5px;
+}
+.disp1Data {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin: 6px 1px auto;
+
+}
+.disp1Data div{
+  box-shadow: 0px 0px;
+  margin:5px auto;
+  align-items: center;
+}
+/* .disp1Data h3 {
+  float: right;
+  
+}
+.disp1Data p {
+  float: right;
+  font-size: small;
+  margin-top:-25px ;
+  margin-right:-10px ;
+}
+/*  */
+.disp1Data img{
+    border-radius: 10px;
+    width: 80px;
+} 
