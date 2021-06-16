@@ -1,14 +1,14 @@
-.containerHostPlace {
+.containerGuestNum {
   width: 100%;
 }
-.containerHostPlace__icon {
+.containerGuestNum__icon {
   object-fit: contain;
   height: 40px;
   float: left;
   margin-top: 10px;
   padding: 0px 40px;
 }
-.dataContainer {
+.dataContainer2 {
   display: flex;
   width: 100%;
   border: 1px solid black;
@@ -20,7 +20,7 @@
   display: flex;
   justify-content: space-between;
 }
-.containerHostPlace__right {
+.containerHostPlace__right2 {
   padding-left: 410px;
   display: flex;
   justify-content: space-between;
@@ -34,9 +34,9 @@
   background-color: transparent;
 }
 
-.containerHostPlace__right > button {
-  background-color: rgb(27, 25, 26);
-  color: white;
+.containerHostPlace__right2 > button {
+  background-color: rgb(236, 236, 236);
+  color: rgb(36, 36, 36);
   text-transform: inherit;
   height: 30px;
   width: 235px;
@@ -45,22 +45,22 @@
   border: transparent;
 }
 
-.containerHostPlace__right button:hover {
+.containerHostPlace__right2 button:hover {
   background-color: rgb(155, 155, 155);
   color: #ffffff;
   border: transparent;
 }
 
-.subDataContainer1 {
+.subData2Container1 {
   padding: 5px;
   width: 50%;
   background: linear-gradient(to bottom, #ff0066 34%, #6600ff 129%);
 }
-.subDataContainer2 {
+.subData2Container2 {
   /* padding: 5px; */
   width: 50%;
   /* background-color: yellowgreen; */
-  background: url("https://media.wired.com/photos/59269cd37034dc5f91bec0f1/191:100/w_1280,c_limit/GoogleMapTA.jpg");
+  background: rgb(255, 255, 255);
 }
 .subDatatext {
   padding-left: 40px;
