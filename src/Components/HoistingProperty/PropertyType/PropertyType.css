@@ -8,7 +8,7 @@
   margin-top: 10px;
   padding: 0px 40px;
 }
-.dataContainer2 {
+.dataContainer3 {
   display: flex;
   width: 100%;
   border: 1px solid black;
@@ -20,7 +20,7 @@
   display: flex;
   justify-content: space-between;
 }
-.containerHostPlace__right2 {
+.containerHostPlace__right3 {
   padding-left: 410px;
   display: flex;
   justify-content: space-between;
@@ -34,7 +34,7 @@
   background-color: transparent;
 }
 
-.containerHostPlace__right2 > button {
+.containerHostPlace__right3 > button {
   background-color: rgb(236, 236, 236);
   color: rgb(36, 36, 36);
   text-transform: inherit;
@@ -45,18 +45,18 @@
   border: transparent;
 }
 
-.containerHostPlace__right2 button:hover {
+.containerHostPlace__right3 button:hover {
   background-color: rgb(155, 155, 155);
   color: #ffffff;
   border: transparent;
 }
 
-.subData2Container1 {
+.subData3Container1 {
   padding: 5px;
   width: 50%;
   background: linear-gradient(to bottom, #ff0066 34%, #6600ff 129%);
 }
-.subData2Container2 {
+.subData3Container2 {
   /* padding: 5px; */
   width: 50%;
   /* background-color: yellowgreen; */
@@ -102,7 +102,7 @@
   border: transparent;
 }
 
-.inputfielCont {
+.inputfielCont3 {
   padding: 5px;
   margin: 20px auto;
   /* border: 1px solid black; */
@@ -112,7 +112,7 @@
   background-color: white;
 }
 
-.inputfielCont input {
+.inputfielCont3 input {
   /* margin-top: 100px; */
   width: 100%;
   height: 40px;
@@ -121,7 +121,7 @@
   /* box-shadow: 0px 0px 4px 0px black; */
 }
 
-.inputfielCont p {
+.inputfielCont3 p {
   text-align: left;
   margin-left: 43px;
   font-size: 12px;
@@ -130,7 +130,7 @@
   color: grey;
 }
 
-.inputfielCont button {
+.inputfielCont3 button {
   float: left;
   margin-left: 43px;
   padding-bottom: 5px;
@@ -140,19 +140,19 @@
   border: transparent;
 }
 
-.inputfielCont button:hover {
+.inputfielCont3 button:hover {
   background-color: rgb(61, 61, 61);
   color: #ffff;
   border: transparent;
 }
 
-.drops2 {
+.drops3 {
   /* background: #fcdddd; */
   border-radius: 8px;
   /* position: relative; */
   margin: 60px auto;
-  margin-left: 0px;
-  width: 30vw;
+  margin-left: 100px;
+  width: 35vw;
   /* box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3); */
   opacity: 0;
   visibility: hidden;
@@ -163,19 +163,21 @@
   transform: translateY(0);
 }
 
-.drops2 ul {
+.drops3 ul {
   list-style: none;
-  padding: 2px;
-  margin: 0;
+  padding: 0px;
 }
 
-.drops2 li {
-  /* border-bottom: 1px solid #dddddd; */
+.drops3 li {
+  border: 1px solid #dddddd;
   text-align: left;
   font-size: small;
+  padding: 6px;
+  margin-bottom: 10px;
+  border-radius: 10px;
 }
 
-.drops2 li a {
+.drops3 li a {
   text-align: left;
   text-decoration: none;
   color: #333333;
@@ -187,15 +189,19 @@
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-.drops2 li div {
+.drops3 li div {
   margin: -40px auto;
   display: flex;
   justify-content: space-around;
   float: right;
   background-color: transparent;
 }
+.drops3 li div img{
+  margin: -20px auto;
+  border-radius: 10px;
+}
 
-.drops2 li div button {
+.drops3 li div button {
   background-color: transparent;
   margin-top: 10px;
   border: transparent;
