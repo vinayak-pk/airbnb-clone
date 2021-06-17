@@ -3,6 +3,7 @@ import React from "react";
 // import HostPlace from "../HostPlace/HostPlace";
 // import HostAddress from "../HostAddress/HostAddress";
 // import PropertyType from "../PropertyType/PropertyType";
+import Amenities from "../HostAmenities/Amenities";
 const HoistingMain = () => {
   return (
     <div>
@@ -10,6 +11,7 @@ const HoistingMain = () => {
       {/* <HostAddress/> */}
       {/* <NumGuest /> */}
       {/* <PropertyType /> */}
+      <Amenities />
     </div>
   );
 };
