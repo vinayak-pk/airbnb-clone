@@ -3,6 +3,7 @@ import { Typography, Box } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 import { Add, Remove } from "@material-ui/icons";
 import {useSelector} from "react-redux"
+import {Link} from "react-router-dom"
 import "./Summary.css";
 let init = {
   adult: 1,
@@ -36,9 +37,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 export function Peoplecount({data}) {
-  const {adult,child,infant} = useSelector((state) => state.Navbar)
+  const {adult,child,infant,customerDate} = useSelector((state) => state.Navbar)
   const [show, setShow] = React.useState(false);
   const [counter, setCounter] = React.useState({...init,adult,child,infant});
+  let tempDate1 = customerDate[0];
+  let tempDate2 = customerDate[1];
+  let noofp = counter.adult+counter.child
+  let days = dayCal(tempDate1, tempDate2)
+  const pricing = data.price * days;
+  const cleaning = Math.ceil(pricing*0.04);
+  const servicefee = Math.ceil(pricing*0.05);
+  const tax = Math.ceil(pricing*0.1);
+  const total = pricing + cleaning+servicefee+tax;
   const classes = useStyles();
   const handleChange=(name,val)=>{
         setCounter({...counter,[name]:counter[name]+val})
@@ -53,7 +63,7 @@ export function Peoplecount({data}) {
       >
         <h6 style={{ margin: "0px" }}>Guests</h6>
         <Typography variant="body1" className={classes.p}>
-          {counter.a} guests
+          {noofp} guests  {counter.infant!==0?counter.infant + ' infants':""}
         </Typography>
       </div>
       {show ? (
@@ -117,15 +127,15 @@ export function Peoplecount({data}) {
         </Box>
       ) : (<>
         <div>
-          <button className="submitbutton">Reserve</button>
+          <Link to="/makepayment"><button className="submitbutton">Reserve</button></Link>
         </div>
         <div>
           <div className="pricing">
             <div>
-            ₹9,999 x 3 nights
+            {data.price} x {days} nights
             </div>
             <div>
-            ₹29,997
+            ₹{pricing}
             </div>
           </div>
           <div className="pricing">
@@ -133,7 +143,7 @@ export function Peoplecount({data}) {
             Cleaning fee
             </div>
             <div>
-            ₹1,200
+            ₹{cleaning}
             </div>
           </div>
           <div className="pricing">
@@ -141,7 +151,7 @@ export function Peoplecount({data}) {
             Service fee
             </div>
             <div>
-            ₹4,404
+            ₹{servicefee}
             </div>
           </div>
           <div className="pricing">
@@ -149,7 +159,7 @@ export function Peoplecount({data}) {
             Occupancy taxes and fees
             </div>
             <div>
-            ₹5,615
+            ₹{tax}
             </div>
           </div>
         </div>
@@ -159,11 +169,18 @@ export function Peoplecount({data}) {
             <b>Total</b>
           </div>
           <div>
-          ₹41,216
+          ₹{total}
           </div>
         </div>
         </>
       )}
     </div>
   );
+}
+
+
+function dayCal(date1,date2){
+  const diffTime = Math.abs(date2 - date1);
+  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+  return diffDays
 }

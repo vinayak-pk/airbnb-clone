@@ -113,7 +113,7 @@ const List = ({
             <h5>{rating}</h5>
           </div>
           <div className={styled.float}>
-            <h4>$ {price} / night</h4>
+            <h4>₹ {price} / night</h4>
           </div>
         </div>
       </div>

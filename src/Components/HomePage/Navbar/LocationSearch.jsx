@@ -59,6 +59,7 @@ const LocationSearch = ({ setTempVal, tempVal }) => {
                 InputLabelProps={{ shrink: true }}
                 InputProps={{
                   classes: { notchedOutline: classes.noBorder },
+                  style:{width:"135%"}
                 }}
                 {...getInputProps({
                   placeholder: "Search Places ...",
@@ -79,8 +80,8 @@ const LocationSearch = ({ setTempVal, tempVal }) => {
                       cursor: "pointer",
                       color: "black",
                       // borderRadius: "10px",
-                      width: "500px",
-                      padding: "20px",
+                      width: "185%",
+                      padding: "5%",
                       borderBottom: "1px solid grey",
                       display: "flex",
                       justifyContent: "space-between",
@@ -89,8 +90,8 @@ const LocationSearch = ({ setTempVal, tempVal }) => {
                       backgroundColor: "#ffffff",
                       color: "black",
                       // borderRadius: "10px",
-                      width: "500px",
-                      padding: "20px",
+                      width: "185%",
+                      padding: "5%",
                       display: "flex",
                       justifyContent: "space-between",
                       // borderBottom: "1px solid grey",

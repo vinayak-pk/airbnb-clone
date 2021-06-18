@@ -1,11 +1,14 @@
 import React from 'react';
 import styles from "../Infopage/infopage.module.css"
 import "./Comment.css"
+import names from "../../Data/name.json"
 
 
-const names = []
 export function Comments({data}){
-    
+    const [seed, setSeed] = React.useState("");
+    React.useEffect(() => {
+        setSeed(Math.floor(Math.random() * 5000))
+      }, [])
     let reviews = data?.review
     return (
         <div>
@@ -19,11 +22,11 @@ export function Comments({data}){
                   return  i<=5&&(<div className="commbody">
                   <div className="comflexbox">
                    <div>
-                     <img src="https://www.pngitem.com/pimgs/m/581-5813504_avatar-dummy-png-transparent-png.png" alt="img" className="cimg"/>
+                     <img src={`https://avatars.dicebear.com/api/human/${Math.floor(Math.random() * 5000+i)}.svg`} alt="img" className="cimg"/>
                    </div>
                    <div>
-                       <h5 className="ch5">Name</h5>
-                       <p className="cp">date</p>
+                       <h5 className="ch5">{names[i].name}</h5>
+                       <p style={{fontSize:"12px"}} className="cp">{names[i].date}</p>
                    </div>
                   </div>
                   <div>

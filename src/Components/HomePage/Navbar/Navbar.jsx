@@ -46,9 +46,9 @@ export const Navbar = () => {
         <p href="#">Get the latest on our COVID-19 response</p>
       </div>
 
-      <div className={navbar ? "heading active" : "heading"}>
+      <div  className={navbar ? "heading active" : "heading"}>
         <div>
-          <img className="header__icon" src={Logo} alt="logo" />
+          <Link to="/"><img className="header__icon" src={Logo} alt="logo" /></Link>
         </div>
         {!showChild ? (
           <div onClick={disp} className="header__center ">

@@ -24,7 +24,6 @@ const HotelList = () => {
         i18n.changeLanguage(e.target.value);
     }
  useEffect(()=> {
-    dispatch(getHotelData())
     const requestParam = {
         url: `http://localhost:2244/hotel/all`,
         method: "get",
@@ -39,14 +38,13 @@ const HotelList = () => {
          
         })
         .catch((err) => console.log(err));
+
+        // dispatch(getHotelData())
  },[page])
  //console.log(hotelList)
     return (
         <div>
-            <select onChange={handleChange}>
-                <option value="en">English</option>
-                <option value="hindi">Hindi</option>
-            </select>
+           
             <div className={styled.flex}>
                 <div className={styled.left}>
                     <h1>{t(`area.1`)}</h1>    
@@ -67,7 +65,7 @@ const HotelList = () => {
                      <Pagination className={styled.page} count={11} page={page} onChange={handlePage} />
                 </div>
                 <div className={styled.right}>
-                    <WrappedMap googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyD0rSoWwf7mbci0dfvsTgSmH3WA3NWx_6U`}
+                    <WrappedMap googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_GOOGLE_KEY}`}
                         loadingElement={<div style={{ height: `100%`,width:"100%" }} />}
                         containerElement={<div style={{ height: `788px`,width:"100%" }} />}
                         mapElement={<div style={{ height: `100%`, width:"100%"}} />}

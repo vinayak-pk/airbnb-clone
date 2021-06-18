@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 export default function Login({open,setOpen}) {
-  const [dispatch] = useStateValue()
+  const [{},dispatch] = useStateValue()
   const classes = useStyles()
 
   const handleClickOpen = () => {

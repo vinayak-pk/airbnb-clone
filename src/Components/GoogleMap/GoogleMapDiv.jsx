@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { GoogleMap, withGoogleMap, withScriptjs, Marker, InfoWindow } from "react-google-maps";
 import { useSelector } from 'react-redux';
+import data  from "../../Data/hotel.json" 
 import styled from "./Google.module.css"
 const GoogleMapDiv = () => {
   const [list, setList] = useState(null)
-  const data = useSelector(state=>state.hotel.data)
   const loc = useSelector(state=>state.Navbar.location)
   console.log(loc)
   return (

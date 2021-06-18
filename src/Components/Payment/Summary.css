@@ -84,3 +84,87 @@
 .navtabs:hover{
      border-bottom: 3px solid black;
 }
+.payment-layout{
+    width:80%;
+    margin: 5% auto;
+}
+.payment-layout p{
+    color:rgb(116, 116, 116);
+}
+
+.payment-back-button{
+    margin-top: 1%;
+    float: left;
+    border: 0px;
+    outline: none;
+    background:white;
+    border-radius: 50%;
+    height:30px;
+}
+
+.payment-back-button:hover{
+   background-color: lightgray;
+  
+}
+
+.payment-heading{
+    display:inline-block;
+    margin-left: 3%;
+    font-size:35px;
+    font-weight: 900;
+}
+
+.payment-body{
+    width:54%;
+    gap:10px
+}
+
+.learnmore{
+    font-weight: 600;
+    text-decoration: underline;
+    cursor: pointer;
+    color:black;
+}
+
+.payment-body2{
+    margin-left: 5%;
+    width:38%;
+    padding: 3%;
+    border: 1px solid lightgray;
+    border-radius:10px;
+    max-height: 55vh;
+
+    position:-webkit-sticky;
+    position: sticky;
+    top:80px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+}
+.payment-option-image{
+    width:20px;
+    margin:0 1%
+}
+.payment-option-image1{
+    width:35px;
+    margin:0 1%
+}
+
+.payflexbody{
+    display:flex;
+    justify-content: space-between;
+    padding: 2%;
+}
+
+.paymentdrop{
+    padding:3% 2%;
+    border: 1px solid rgb(61, 61, 61);
+    border-radius:10px
+}
+
+.paymentCan{
+    font-size:20px;
+    font-weight: 700;
+}
+
+.termsncond{
+  font-size:10px;
+}

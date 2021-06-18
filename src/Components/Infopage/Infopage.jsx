@@ -52,9 +52,11 @@ export function Infopage() {
            <span className={styles.topdec}>{data.location},{data.location_nearby},India</span>
         </div>
       </div>
-      <Photogrid/>
+      <div id="photo">
+        <Photogrid/>
+      </div>
       <div style={{display:"flex",gap:"8%",margin:"10px 0"}}>
-        <Grid  xs={7}>
+        <Grid id="amenties" xs={7}>
             <Description/>
           </Grid>
           <Grid xs={5}>
@@ -63,11 +65,13 @@ export function Infopage() {
       </div>
       <br/>
       <hr/>
-      <Comments data={data}/>
+      <div id="review">
+        <Comments data={data}/>
+      </div>
     </div>
     <br/>
     <hr/>
-    <div className={styles.imapsholder}>
+    <div id="location" className={styles.imapsholder}>
       <h1>Location</h1>
       <InfoMap isMarkerShown/>  
     </div>

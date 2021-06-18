@@ -1,20 +1,20 @@
 import React from "react"
-
+import {Link} from "react-router-dom"
 import "../Payment/Summary.css"
 export function Navsum(){
     return(
         <div className="sumNav">
           <div className="navtabs">
-             Photos
+             <a href="#photo">Photos</a>
           </div>
           <div className="navtabs">
-             Amenties
+            <a href="#amenties">Amenties</a>
           </div>
           <div className="navtabs">
-             Reviews
+            <a href="#review">Reviews</a>
           </div>
           <div className="navtabs">
-             Location
+            <a href="#location">Location</a>
           </div>
         </div>
     )

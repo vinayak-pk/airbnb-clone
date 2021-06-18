@@ -1,13 +1,16 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
-const app = express()
-app.use(express.json())
+
+
+const app = express();
+app.use(express.json());
 app.use(
   cors({
     origin: 'http://localhost:3000',
   }),
 )
+app.use("/payment", require("./routes/payment"));
 const connect = () => {
   return mongoose.connect(
     'mongodb+srv://airbnb_clone:airbnb_MRV@cluster0.ddlde.mongodb.net/airbnb?retryWrites=true&w=majority',
@@ -84,7 +87,6 @@ app.get("/hotel/all", async (req,res)=>
 })
 
 
-
 app.get('/hotel', async (req, res) => {
   let ans = filterData(req.query)
   let data
@@ -101,6 +103,8 @@ app.get('/hotel', async (req, res) => {
   res.status(200).json({ data: data })
   // console.log(req.query)
 })
+
+
 const start = async () => {
   await connect()
   app.listen('2244', () => {
@@ -112,7 +116,7 @@ start()
 function filterData(obj) {
  
   let arr = []
-    for (key in obj) {
+    for (let key in obj) {
       let temp = false
       if (
         key === 'price' ||
