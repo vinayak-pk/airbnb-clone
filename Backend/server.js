@@ -86,7 +86,10 @@ app.get("/hotel/all", async (req,res)=>
       res.status(200).json({data:hotel})
 })
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 52229fe347bca54e48f3f9d5d2d03394f96a095a
 app.get('/hotel', async (req, res) => {
   let ans = filterData(req.query)
   let data
