@@ -1,5 +1,4 @@
 import React from "react"
-import {Link} from "react-router-dom"
 import "../Payment/Summary.css"
 export function Navsum(){
     return(

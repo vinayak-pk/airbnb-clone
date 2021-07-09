@@ -17,7 +17,6 @@ const useStyles = makeStyles({
 });
 const HostingWorks = () => {
   const classes = useStyles();
-  const history = useHistory();
   return (
     <div className={styles.mainCont1}>
       <div className={styles.textDisp1}>
