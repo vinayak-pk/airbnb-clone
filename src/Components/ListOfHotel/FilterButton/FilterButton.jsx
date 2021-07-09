@@ -305,7 +305,7 @@ export default function FilterButton() {
         {open3 ? (
           <div className={classes.dropdown3}>
             <Typography id="continuous-slider" gutterBottom>
-              The average nightly price is $68
+              The average nightly price is ₹1500
             </Typography>
             <Grid container spacing={2}>
               <Grid item>

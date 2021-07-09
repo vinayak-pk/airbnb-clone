@@ -111,7 +111,7 @@ const NumGuest = () => {
           </div>
           <div className="footerCont">
             <Link to="/hosting/address"><Button variant="outlined">Back</Button></Link>
-            <Link to="/"><Button variant="outlined">Next</Button></Link>
+            <Link to="/hosting/amenities"><Button variant="outlined">Next</Button></Link>
           </div>
         </div>
       </div>

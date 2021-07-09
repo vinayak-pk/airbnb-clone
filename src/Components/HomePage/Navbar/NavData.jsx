@@ -102,7 +102,7 @@ const NavData = () => {
                 variant="default"
                 onClick={() => setisActing(!isActing)}
               >
-                {adult + child + infant !== 0 ? adult + child + infant : "Guests"}
+                {adult + child + infant !== 0 ? adult + child + infant===1? (adult + child + infant + " Guest") : adult + child + infant + " Guests": "Guests"}
               </button>
             </Tooltip>
             <Tooltip title="Click to view facinating places" arrow>
@@ -112,7 +112,7 @@ const NavData = () => {
                   width: "25px",
                   borderRadius: "50%",
                   height: "25px",
-                  marginLeft: "10px",
+                  marginLeft: "7%",
                   marginTop: "10px",
                   backgroundColor: "rgb(255, 50, 84)",
                   cursor: "pointer",
@@ -136,7 +136,7 @@ const NavData = () => {
                       -
                     </button>
                     <p>{adult}</p>
-                    <button onClick={() => handlePeople("adult", 1)}>+</button>
+                    <button  disabled={adult === 6} onClick={() => handlePeople("adult", 1)}>+</button>
                   </div>
                 </li>
                 <li>
@@ -150,7 +150,7 @@ const NavData = () => {
                       -
                     </button>
                     <p>{child}</p>
-                    <button onClick={() => handlePeople("child", 1)}>+</button>
+                    <button   disabled={child === 4} onClick={() => handlePeople("child", 1)}>+</button>
                   </div>
                 </li>
                 <li>
@@ -164,7 +164,7 @@ const NavData = () => {
                       -
                     </button>
                     <p>{infant}</p>
-                    <button onClick={() => handlePeople("infant", 1)}>+</button>
+                    <button  disabled={infant === 4} onClick={() => handlePeople("infant", 1)}>+</button>
                   </div>
                 </li>
               </ul>

@@ -47,6 +47,7 @@ export default function Calender({ setTempVal, tempVal }) {
                 InputLabelProps={{ shrink: true }}
                 InputProps={{
                   classes: { notchedOutline: classes.noBorder },
+                  style:{margin:'0 5%'}
                 }}
                 {...startProps}
                 helperText=""
@@ -64,6 +65,7 @@ export default function Calender({ setTempVal, tempVal }) {
                 InputLabelProps={{ shrink: true }}
                 InputProps={{
                   classes: { notchedOutline: classes.noBorder },
+                  style:{margin:'0 5%'}
                 }}
                 {...endProps}
                 helperText=""

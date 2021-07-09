@@ -18,7 +18,7 @@ export function Summary({data}){
                 </div>
                 <div className="sdate">
                  <Calender/>
-                  <Peoplecount/>
+                  <Peoplecount data={data}/>
                 </div>
             </div>
         </div>

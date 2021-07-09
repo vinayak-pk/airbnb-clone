@@ -93,7 +93,7 @@ const PropertyType = () => {
             </nav>
           </div>
           <div className="footerCont">
-            <Button variant="outlined">Back</Button>
+            <Link to="/hosting"><Button variant="outlined">Back</Button></Link>
             <Link to="/hosting/place"><Button variant="outlined">Next</Button></Link>
           </div>
         </div>

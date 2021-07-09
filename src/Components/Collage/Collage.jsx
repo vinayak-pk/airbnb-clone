@@ -23,6 +23,14 @@ const useStyles = makeStyles((theme) => ({
     },
     box:{
       paddingTop: '20px' 
+    },
+    mimg:{
+      minHeight:'24rem',
+      maxHeight:'24rem'
+    },
+    imgs:{
+      minHeight:'12rem',
+      maxHeight:'12rem'
     }
   }));
 
@@ -36,12 +44,12 @@ export function Photogrid(){
     return <div className={classes.root}>
               <Grid className={classes.box} container spacing={"1"}>
                   <Grid item xs={6}>
-                    <img style={{width:"99%",borderTopLeftRadius:"10px",borderBottomLeftRadius:"10px"}} src={first} alt="something" />
+                    <img className={classes.mimg}  style={{width:"99%",borderTopLeftRadius:"10px",borderBottomLeftRadius:"10px"}} src={first} alt="something" />
                   </Grid>
                   <Grid className={classes.gridPad} container xs={6} spacing={1}>
                     {data.img?.map((image,i)=>(
                       i!==0&&i<5&&<Grid key={i} xs={6}>
-                          <img style={i===2?{width:"98%",borderTopRightRadius:"10px"}:i===4?{width:"98%",borderBottomRightRadius:"10px"}:{width:"98%"}} src={image} alt="something" />
+                          <img className={classes.imgs} style={i===2?{width:"98%",borderTopRightRadius:"10px"}:i===4?{width:"98%",borderBottomRightRadius:"10px"}:{width:"98%"}} src={image} alt="something" />
                       </Grid>
                       ))}
                   </Grid>
