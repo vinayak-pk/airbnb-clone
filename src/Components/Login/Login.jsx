@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Login({open,setOpen}) {
   const [{},dispatch] = useStateValue()
   const classes = useStyles()
-
+  const [state,setState] = React.useState(true);
   const handleClickOpen = () => {
     setOpen(true)
   }
@@ -54,15 +54,17 @@ export default function Login({open,setOpen}) {
     auth
       .signInWithPopup(provider)
       .then((result) => {
+        console.log(result)
         dispatch({
           type: actionTypes.SET_USER,
           user: result.user,
         })
+        setState(false);
       })
       .catch((error) => alert(error.message))
   }
   return (
-    <div>
+    state?<div>
       {/* <Button variant="outlined" color="primary" onClick={handleClickOpen}>
         Login
       </Button> */}
@@ -98,6 +100,6 @@ export default function Login({open,setOpen}) {
           </Button>
         </div>
       </Dialog>
-    </div>
+    </div>:<></>
   )
 }

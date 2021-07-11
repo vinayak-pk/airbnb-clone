@@ -4,8 +4,10 @@ import ReorderIcon from "@material-ui/icons/Reorder";
 import { Avatar } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import Login from "../../Login/Login"
+import { useStateValue } from '../../../Redux/Login/StateProvider'
 
 export default function UserClick() {
+  const [{user}]=useStateValue()
   const [open, setOpen] = React.useState(false)
   const onClick = () => setOpen(!open);
   return (
@@ -19,6 +21,7 @@ export default function UserClick() {
               height: "32px",
               background: "rgb(113,113,113)",
             }}
+            src={user?.photoURL}
           />
         </button>
          {open && <Login open={open} setOpen={setOpen}/>}

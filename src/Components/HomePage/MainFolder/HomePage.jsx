@@ -8,7 +8,7 @@ import Live from "../Live_anywhere/Live"
 // import { Link, animateScroll as scroll } from "react-scroll";
 
 export const HomePage = () => {
-  
+
   return (
     <div>
       <Navbar />

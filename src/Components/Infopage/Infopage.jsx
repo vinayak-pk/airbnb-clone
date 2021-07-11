@@ -73,7 +73,7 @@ export function Infopage() {
     <hr/>
     <div id="location" className={styles.imapsholder}>
       <h1>Location</h1>
-      <InfoMap isMarkerShown/>  
+      <InfoMap data={data} isMarkerShown/>  
     </div>
     <hr/>
     <Ownerinfo data={data}/>

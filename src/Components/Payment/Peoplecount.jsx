@@ -5,6 +5,8 @@ import { Add, Remove } from "@material-ui/icons";
 import {useSelector} from "react-redux"
 import {Link} from "react-router-dom"
 import "./Summary.css";
+import Login from "../Login/Login"
+import { useStateValue } from '../../Redux/Login/StateProvider'
 let init = {
   adult: 1,
   child: 0,
@@ -37,6 +39,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 export function Peoplecount({data}) {
+  const [{user}]=useStateValue()
   const {adult,child,infant,customerDate} = useSelector((state) => state.Navbar)
   const [show, setShow] = React.useState(false);
   const [counter, setCounter] = React.useState({...init,adult,child,infant});
@@ -53,6 +56,8 @@ export function Peoplecount({data}) {
   const handleChange=(name,val)=>{
         setCounter({...counter,[name]:counter[name]+val})
   }
+  const [open, setOpen] = React.useState(false)
+  const onClick = () => setOpen(!open);
   return (
     <div>
       <div
@@ -126,8 +131,11 @@ export function Peoplecount({data}) {
           </Box>
         </Box>
       ) : (<>
-        <div>
-          <Link to="/makepayment"><button className="submitbutton">Reserve</button></Link>
+        <div> 
+         {user?<Link to="/makepayment"><button className="submitbutton">Reserve</button></Link>:
+         <button onClick={onClick} className="submitbutton">Reserve</button>}
+         {open && <Login open={open} setOpen={setOpen}/>}
+         
         </div>
         <div>
           <div className="pricing">

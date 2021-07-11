@@ -62,7 +62,7 @@ export const Navbar = () => {
         <div className="header__right">
           <Link style={{color: 'white',textDecoration: 'none'}} to="/becomehost">Become a host</Link>
           <LanguageIcon  style={{width:"26px",height:"20px",}} />
-          <UserClick />
+          <UserClick/>
         </div>
       </div>
       {/* <Banner /> */}

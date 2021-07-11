@@ -1,14 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { compose, withProps } from "recompose";
+import {useSelector} from "react-redux"
 import {
   withScriptjs,
   withGoogleMap,
   GoogleMap,
   Marker
 } from "react-google-maps";
-console.log(process.env.NODE_ENV)
-export const InfoMap = compose(
+let loc;
+// const func=()=>{
+//   const {location} = useSelector((state) => state.info)
+//   loc =location
+// return(<div>
+
+// </div>)
+// }
+export const InfoMap =compose(
   withProps({
     googleMapURL:
       `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_KEY}&v=3.exp&libraries=geometry,drawing,places`,
@@ -19,9 +27,9 @@ export const InfoMap = compose(
   withScriptjs,
   withGoogleMap
 )(props => (
-  <GoogleMap defaultZoom={8} defaultCenter={{ lat: 19.218, lng: 72.978 }}>
+  <GoogleMap defaultZoom={8} defaultCenter={{ lat: props.data?.geometry[0], lng:props.data?.geometry[1] }}>
     {props.isMarkerShown && (
-      <Marker position={{ lat: 19.218, lng: 72.978 }} />
+      <Marker position={{ lat: props.data?.geometry[0], lng: props.data?.geometry[1] }} />
     )}
   </GoogleMap>
-));
+))
