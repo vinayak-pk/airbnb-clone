@@ -37,8 +37,9 @@
     "styled-components": "^5.3.0",
     "web-vitals": "^1.0.1"
   },
+  "homepage": ".",
   "scripts": {
-    "start": "PORT=8007 react-scripts start",
+    "start": "set PORT=8007 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

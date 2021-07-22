@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { makeStyles } from '@material-ui/core/styles'
+import  {makeStyles}  from "@material-ui/styles";
 import ClickAwayListener from '@material-ui/core/ClickAwayListener'
 import { useTranslation } from 'react-i18next'
 import styled from '../HotelList.module.css'
@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '20px',
     padding: '10px',
     paddingTop: '30px',
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: "rgb(245, 245, 245)",
     color: 'grey',
   },
   dropdown2: {
@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '20px',
     padding: '10px',
     paddingTop: '30px',
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: "rgb(245, 245, 245)",
     color: 'grey',
   },
   dropdown3: {
@@ -60,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '20px',
     padding: '10px',
     paddingTop: '30px',
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: "rgb(245, 245, 245)",
     color: 'grey',
   },
   dropdown4: {
@@ -75,7 +75,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '20px',
     padding: '10px',
     paddingTop: '30px',
-    backgroundColor: theme.palette.background.paper, 
+    backgroundColor: "rgb(245, 245, 245)", 
     color: 'grey',
   },
   dropdown5: {
@@ -90,7 +90,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '20px',
     padding: '10px',
     paddingTop: '30px',
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: "rgb(245, 245, 245)",
     color: 'grey',
   },
   switch1: {

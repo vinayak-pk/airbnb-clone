@@ -4,7 +4,7 @@ import TextField from "@material-ui/core/TextField";
 import DateRangePicker from "@material-ui/lab/DateRangePicker";
 import AdapterDateFns from "@material-ui/lab/AdapterDateFns";
 import LocalizationProvider from "@material-ui/lab/LocalizationProvider";
-import { makeStyles } from "@material-ui/core/styles";
+import  {makeStyles}  from "@material-ui/styles";
 import Box from "@material-ui/core/Box";
 import Tooltip from "@material-ui/core/Tooltip";
 
@@ -38,16 +38,17 @@ export default function Calender({ setTempVal, tempVal }) {
           <React.Fragment>
             <Tooltip title="Add Dates" arrow>
               <TextField
-                variant="outlined"
+                // variant="outlined"
                 disableUnderline={false}
                 margin="normal"
-                name="Check-out"
-                autoComplete="Check-out"
-                placeholder="Check out"
+                name="Check-in"
+                autoComplete="Check-in"
+                label="Check in"
+                variant="standard"
                 InputLabelProps={{ shrink: true }}
                 InputProps={{
                   classes: { notchedOutline: classes.noBorder },
-                  style:{margin:'0 5%'}
+                  style:{margin:'0 5%',padding:"4.4%"}
                 }}
                 {...startProps}
                 helperText=""
@@ -56,16 +57,17 @@ export default function Calender({ setTempVal, tempVal }) {
             <Box></Box>
             <Tooltip title="Add Dates" arrow>
               <TextField
-                variant="outlined"
+               variant="standard"
+                // label="Locations"
                 disableUnderline={false}
                 margin="normal"
-                name="Check-in"
-                autoComplete="Check-in"
-                placeholder="Check-in"
+                name="Check-out"
+                autoComplete="Check-out"
+                label="Check-out"
                 InputLabelProps={{ shrink: true }}
                 InputProps={{
                   classes: { notchedOutline: classes.noBorder },
-                  style:{margin:'0 5%'}
+                  style:{margin:'0 5%',padding:"4.4%"}
                 }}
                 {...endProps}
                 helperText=""

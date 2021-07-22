@@ -6,7 +6,8 @@ import './Login.css'
 import Button from '@material-ui/core/Button'
 import Dialog from '@material-ui/core/Dialog'
 import Slide from '@material-ui/core/Slide'
-import { Divider, makeStyles, TextField } from '@material-ui/core'
+import { Divider, TextField } from '@material-ui/core'
+import  {makeStyles}  from "@material-ui/styles";
 import { FcGoogle } from "react-icons/fc";
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />

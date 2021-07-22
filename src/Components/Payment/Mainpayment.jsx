@@ -45,7 +45,7 @@ const  loadScript=(src)=> {
             return;
         }
 
-        const result = await axios.post(`http://localhost:2244/payment/orders?q=${total}`);
+        const result = await axios.post(`https://airbnb-clone2-server.herokuapp.com/payment/orders?q=${total}`);
 
         if (!result) {
             alert("Server error. Are you online?");
@@ -70,7 +70,7 @@ const  loadScript=(src)=> {
                     razorpaySignature: response.razorpay_signature,
                 };
 
-                axios.post("http://localhost:2244/payment/success", data).then((res)=>{
+                axios.post("https://airbnb-clone2-server.herokuapp.com/payment/success", data).then((res)=>{
                     alert('Payment Successful');
                     history.push('/')
                 })

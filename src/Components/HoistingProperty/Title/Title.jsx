@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from './Title.module.css'
 import ReactPlayer from 'react-player'
-import { Button, Divider, makeStyles, TextField } from '@material-ui/core'
+import { Button, Divider,TextField } from '@material-ui/core'
+import  {makeStyles}  from "@material-ui/styles";
 import {Link} from "react-router-dom"
 
 let x ="https://a0.muscache.com/v/35/21/35214294-0149-5662-b169-fdd3fcedcc2b/3521429401495662b169fdd3fcedcc2b_4000k_1.mp4" 

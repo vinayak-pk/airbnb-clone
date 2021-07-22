@@ -20,13 +20,13 @@ const Amenities = () => {
     <div className={style.containerAmeneties}>
       <div className={style.dataContainerAmeneties}>
         <div className={style.subData3ContainerAmeneties1}>
-          <div>
+          {/* <div>
             <img
               className={style.containerGuestNum__icon}
               src={Logo2}
               alt="logo"
             />
-          </div>
+          </div> */}
           <div className={style.subDatatextAmeneties}>
             <h2>
               Let your guests know what

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import TextField from "@material-ui/core/TextField";
-import { makeStyles } from "@material-ui/core/styles";
+import  {makeStyles}  from "@material-ui/styles";
 import Tooltip from "@material-ui/core/Tooltip";
 import EditLocationIcon from "@material-ui/icons/EditLocation";
 import PlacesAutocomplete, {
@@ -56,10 +56,11 @@ const LocationSearch = ({ setTempVal, tempVal }) => {
                 margin="normal"
                 label="Locations"
                 onChange={() => locations(coordinate)}
+                variant="standard"
                 InputLabelProps={{ shrink: true }}
                 InputProps={{
                   classes: { notchedOutline: classes.noBorder },
-                  style:{width:"135%"}
+                  style:{width:"115%",marginLeft:"15px"}
                 }}
                 {...getInputProps({
                   placeholder: "Search Places ...",

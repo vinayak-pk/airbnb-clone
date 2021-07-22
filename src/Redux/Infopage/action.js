@@ -22,7 +22,7 @@ export function request_failure(){
 export const getData=(id)=>(dispatch)=>{
     console.log(id)
     dispatch(network_request);
-  return axios.get(`http://localhost:2244/room/${id}`)
+  return axios.get(`https://airbnb-clone2-server.herokuapp.com/room/${id}`)
    .then(res=>{
        dispatch(request_success(res.data.data))})
    .catch(res=>{
