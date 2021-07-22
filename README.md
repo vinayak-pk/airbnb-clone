@@ -60,9 +60,8 @@
 > &ensp; <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7EoRJu321RSf8QQZR8XJ2zL7LIDHsQhRfwQ&usqp=CAU" width = "100" height = "100" alt = "mongodb">
 > &ensp; <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR5Yv5C7VdZ6U4OLPJCARyYMb4EMHMndVR5Q&usqp=CAU" width = "100" height = "100"alt ="expressjs" />
 
-
-> ## &ensp; HTML &emsp; &ensp;CSS &emsp; &ensp; Javascript &emsp; React
+> ## &ensp; HTML &emsp; &ensp;CSS &emsp; &ensp; Javascript &emsp; React &emsp; MongoDB &emsp; ExpressJS
 
 ## Snapshot from the Built Product
 
-> <img src = "https://drive.google.com/file/d/1uCaoD_btgnvPH25hriui6R3_je03CuOi/view?usp=sharing" alt = "Landing page" /> &emsp; > <img src = "https://drive.google.com/file/d/1inQSxHJw9dkUpcxLwB7LU0hsXudADgT_/view?usp=sharing" alt = "hotelList" /> &emsp; > <img src = "https://drive.google.com/file/d/156TEOS4i8SDemqzl40IVisK0xoNT_juR/view?usp=sharing" alt = "propertyType" /> &emsp; > <img src = "https://drive.google.com/file/d/1vOBJr13V07RokEypLtnwTWlworBGag0X/view?usp=sharing" alt = "paymentSection" /> &emsp; > <img src = "https://drive.google.com/file/d/1bkXH9grTOnOD0MZuidFcc2codtYxzJmM/view?usp=sharing" alt = "Hostpage1" />&emsp; > <img src = "https://drive.google.com/file/d/1217zFJVKDslBp3d-zCK_j2uALO0xocj1/view?usp=sharing" alt = "Hostpage2" />
+> <img src = "../images/airbnbSnap.png" alt = "Landing page" /> &emsp; > <img src = "../images/hotrelList.png" alt = "hotelList" /> &emsp; > <img src = "../images/propertypage.png" alt = "propertyType" /> &emsp; > <img src = "../images/paymentsec.png" alt = "paymentSection" /> &emsp; > <img src = "../images/becomehostpage.png" alt = "Hostpage1" />&emsp; > <img src = "../images/kindplace.png" alt = "Hostpage2" />
