@@ -6,6 +6,7 @@ import {Tabs} from "./Tabs"
 import axios from "axios";
 import {useSelector} from "react-redux"
 import {useHistory} from "react-router-dom"
+import { useStateValue } from '../../Redux/Login/StateProvider'
 export function Mainpayment(){
     const {guests,customerDate} = useSelector((state) => state.Navbar)
     const {data} = useSelector((state) => state.info);
@@ -18,7 +19,8 @@ export function Mainpayment(){
     const servicefee = Math.ceil(pricing*0.05);
     const tax = Math.ceil(pricing*0.1);
     const total = pricing + cleaning+servicefee+tax;
-
+    const [{user}]=useStateValue()
+    console.log(user)
 const  loadScript=(src)=> {
         return new Promise((resolve) => {
             const script = document.createElement("script");
@@ -43,7 +45,7 @@ const  loadScript=(src)=> {
             return;
         }
 
-        const result = await axios.post(`http://localhost:2244/payment/orders?q=${total}`);
+        const result = await axios.post(`https://airbnb-clone2-server.herokuapp.com/payment/orders?q=${total}`);
 
         if (!result) {
             alert("Server error. Are you online?");
@@ -68,7 +70,7 @@ const  loadScript=(src)=> {
                     razorpaySignature: response.razorpay_signature,
                 };
 
-                axios.post("http://localhost:2244/payment/success", data).then((res)=>{
+                axios.post("https://airbnb-clone2-server.herokuapp.com/payment/success", data).then((res)=>{
                     alert('Payment Successful');
                     history.push('/')
                 })
@@ -76,8 +78,8 @@ const  loadScript=(src)=> {
 
             },
             prefill: {
-                name: "Vinayak PK",
-                email: "vinayak@example.com",
+                name: `${user?.displayName}`,
+                email:  `${user?.email}`,
                 contact: "9876543210",
             },
             notes: {

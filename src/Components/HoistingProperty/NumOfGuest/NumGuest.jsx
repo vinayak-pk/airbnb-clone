@@ -32,9 +32,9 @@ const NumGuest = () => {
     <div className="containerGuestNum">
       <div className="dataContainer2">
         <div className="subData2Container1">
-          <div>
+          {/* <div>
             <img className="containerGuestNum__icon" src={Logo2} alt="logo" />
-          </div>
+          </div> */}
           <div className="subDatatext">
             <h1>
               How many guests would you like to <br />

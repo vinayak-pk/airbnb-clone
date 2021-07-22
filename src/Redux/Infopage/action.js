@@ -20,10 +20,11 @@ export function request_failure(){
 }
 
 export const getData=(id)=>(dispatch)=>{
+    console.log(id)
     dispatch(network_request);
-  return axios.get(`https://mock-server2.herokuapp.com/rooms/${id}`)
+  return axios.get(`https://airbnb-clone2-server.herokuapp.com/room/${id}`)
    .then(res=>{
-       dispatch(request_success(res.data))})
+       dispatch(request_success(res.data.data))})
    .catch(res=>{
        dispatch(request_failure)
     })

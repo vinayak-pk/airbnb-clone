@@ -1,5 +1,4 @@
 import React from "react"
-import { Button } from "@material-ui/core";
 
 import {Peoplecount} from "./Peoplecount"
 import styles from  "../Infopage/infopage.module.css";

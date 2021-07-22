@@ -6,7 +6,8 @@ import './Login.css'
 import Button from '@material-ui/core/Button'
 import Dialog from '@material-ui/core/Dialog'
 import Slide from '@material-ui/core/Slide'
-import { Divider, makeStyles, TextField } from '@material-ui/core'
+import { Divider, TextField } from '@material-ui/core'
+import  {makeStyles}  from "@material-ui/styles";
 import { FcGoogle } from "react-icons/fc";
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />
@@ -42,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Login({open,setOpen}) {
   const [{},dispatch] = useStateValue()
   const classes = useStyles()
-
+  const [state,setState] = React.useState(true);
   const handleClickOpen = () => {
     setOpen(true)
   }
@@ -54,15 +55,20 @@ export default function Login({open,setOpen}) {
     auth
       .signInWithPopup(provider)
       .then((result) => {
+        console.log(result)
         dispatch({
           type: actionTypes.SET_USER,
           user: result.user,
         })
+        setState(false);
       })
       .catch((error) => alert(error.message))
   }
   return (
-    <div>
+    state?<div>
+      {/* <Button variant="outlined" color="primary" onClick={handleClickOpen}>
+        Login
+      </Button> */}
       <Dialog
         open={open}
         TransitionComponent={Transition}
@@ -95,6 +101,6 @@ export default function Login({open,setOpen}) {
           </Button>
         </div>
       </Dialog>
-    </div>
+    </div>:<></>
   )
 }

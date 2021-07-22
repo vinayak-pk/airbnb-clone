@@ -1,0 +1,29 @@
+{
+    "area":{
+        "1":"Stays in selected map area"
+    },
+    "local":
+    {
+        "1":"Review COVID-19 travel restrictions before you book.Learn more"
+    },
+    "cancel":
+    {
+        "1":"Cancellation flexibility"
+    },
+    "place":
+    {
+        "1":"Type of place"
+    },
+    "price":
+    {
+        "1":"Price"
+    },
+    "booking":
+    {
+        "1":"Instant Book"
+    },
+    "more":
+    {
+        "1":"More Filters"
+    }
+}

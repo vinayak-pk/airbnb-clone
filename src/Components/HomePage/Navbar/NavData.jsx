@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import SearchRoundedIcon from "@material-ui/icons/SearchRounded";
 import TextField from "@material-ui/core/TextField";
-import { makeStyles } from "@material-ui/core/styles";
+import  {makeStyles}  from "@material-ui/styles";
 import Tooltip from "@material-ui/core/Tooltip";
 import { Link ,useHistory} from "react-router-dom";
 import "./Nav.css";

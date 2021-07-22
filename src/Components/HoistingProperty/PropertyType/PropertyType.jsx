@@ -11,9 +11,9 @@ const PropertyType = () => {
     <div className="containerGuestNum">
       <div className="dataContainer3">
         <div className="subData3Container1">
-          <div>
+          {/* <div>
             <img className="containerGuestNum__icon" src={Logo2} alt="logo" />
-          </div>
+          </div> */}
           <div className="subDatatext">
             <h1>
               What kind of place will <br />

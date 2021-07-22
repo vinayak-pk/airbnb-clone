@@ -3,7 +3,7 @@ import Button from "@material-ui/core/Button";
 import Logo2 from "../Pictures/Logo2.svg";
 import styles from "./Hostplace.module.css";
 import TextField from "@material-ui/core/TextField";
-import { makeStyles } from "@material-ui/core/styles";
+import  {makeStyles}  from "@material-ui/styles";
 import Tooltip from "@material-ui/core/Tooltip";
 import EditLocationIcon from "@material-ui/icons/EditLocation";
 import {Link} from "react-router-dom"
@@ -46,9 +46,9 @@ const HostPlace = ({ setTempVal, tempVal }) => {
     <div className={styles.containerHostPlace}>
       <div className={styles.dataContainer}>
         <div className={styles.subDataContainer1}>
-          <div>
+          {/* <div>
             <img className={styles.containerHostPlace__icon} src={Logo2} alt="logo" />
-          </div>
+          </div> */}
           <div className={styles.subDatatext}>
             <h1>
               Where's your place <br />

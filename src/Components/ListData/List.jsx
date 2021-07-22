@@ -76,7 +76,6 @@ const List = ({
   //console.log(review)
   return (
     <div  className={styled.padding}>
-
       {/* <div className={styled.flex1}>
           <div className={styled.div1}>
            <AliceCarousel autoWidth={true} mouseTracking items={items} />
@@ -90,9 +89,7 @@ const List = ({
           <AliceCarousel autoWidth={true} mouseTracking items={items} />
         </div>
 
-
         <div onClick={()=>handleClick(_id)}  className={styled.div}>
-
           <div>{name}</div>
           <div className={styled.line}></div>
           <p className={styled.font}>

@@ -1,7 +1,7 @@
 import React from "react";
 import TextField from "@material-ui/core/TextField";
 import { Button } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import  {makeStyles}  from "@material-ui/styles";
 import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import "./InputFindout.css";
@@ -9,7 +9,7 @@ import "./InputFindout.css";
 const useStyling = makeStyles((theme) => ({
   root: {
     "& .MuiTextField-root": {
-      margin: theme.spacing(0),
+      margin: "10px",
       width: 410,
       backgroundColor: "white",
 

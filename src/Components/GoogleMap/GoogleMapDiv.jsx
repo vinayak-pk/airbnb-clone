@@ -11,7 +11,6 @@ const GoogleMapDiv = () => {
     <GoogleMap defaultZoom={10} defaultCenter={{ lat: loc.lat, lng: loc.lng }}>
       {
         data?.map((location) =>
-
         (
           <Marker key={location.id}
             position={{

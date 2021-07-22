@@ -5,10 +5,7 @@ import names from "../../Data/name.json"
 
 
 export function Comments({data}){
-    const [seed, setSeed] = React.useState("");
-    React.useEffect(() => {
-        setSeed(Math.floor(Math.random() * 5000))
-      }, [])
+  
     let reviews = data?.review
     return (
         <div>

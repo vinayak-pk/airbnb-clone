@@ -2,7 +2,7 @@ import React from "react";
 import Logo2 from "../Pictures/Logo2.svg";
 import "./HostAddress.css";
 import Button from "@material-ui/core/Button";
-import { makeStyles } from "@material-ui/core/styles";
+import  {makeStyles}  from "@material-ui/styles";
 import TextField from "@material-ui/core/TextField";
 import {Link} from "react-router-dom"
 const useStylesInput = makeStyles((theme) => ({
@@ -22,9 +22,9 @@ const HostAddress = () => {
     <div className="containerHostPlace">
       <div className="dataContainer">
         <div className="subDataContainer1">
-          <div>
+          {/* <div>
             <img className="containerHostPlace__icon" src={Logo2} alt="logo" />
-          </div>
+          </div> */}
           <div className="subDatatext">
             <h1>
               Where's your place <br />
