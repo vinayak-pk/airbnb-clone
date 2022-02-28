@@ -65,9 +65,9 @@
 
 ## Snapshot from the Built Product
 
-> &ensp; <img src = "https://drive.google.com/file/d/1uCaoD_btgnvPH25hriui6R3_je03CuOi/view?usp=sharing" alt = "Landing page" /> 
-> &ensp; <img src = "https://drive.google.com/file/d/1inQSxHJw9dkUpcxLwB7LU0hsXudADgT_/view?usp=sharing" alt = "hotelList" />  
-> &ensp; <img src = "https://drive.google.com/file/d/156TEOS4i8SDemqzl40IVisK0xoNT_juR/view?usp=sharing" alt = "propertyType" /> 
-> &ensp; > <img src = "https://drive.google.com/file/d/1vOBJr13V07RokEypLtnwTWlworBGag0X/view?usp=sharing" alt = "paymentSection" /> 
-> &ensp; > <img src = "https://drive.google.com/file/d/1bkXH9grTOnOD0MZuidFcc2codtYxzJmM/view?usp=sharing" alt = "Hostpage1" />
-> &ensp; > <img src = "https://drive.google.com/file/d/1217zFJVKDslBp3d-zCK_j2uALO0xocj1/view?usp=sharing" alt = "Hostpage2" />
+> &ensp; <img src = "https://photos.app.goo.gl/iMatrZFtYx4LLhuu5" alt = "Landing page" /> 
+> &ensp; <img src = "https://photos.app.goo.gl/i4WocniDTQW3mxPb9" alt = "hotelList" />  
+> &ensp; <img src = "https://photos.app.goo.gl/5Pki7cFSTvJrS9K79" alt = "propertyType" /> 
+> &ensp; > <img src = "https://photos.app.goo.gl/HomEbFfQP1mkBWL66" alt = "paymentSection" /> 
+> &ensp; > <img src = "https://photos.app.goo.gl/x4mmEsovANaTot3Y8" alt = "Hostpage1" />
+> &ensp; > <img src = "https://photos.app.goo.gl/9aAX4Ep42JUcpmjh9" alt = "Hostpage2" />
